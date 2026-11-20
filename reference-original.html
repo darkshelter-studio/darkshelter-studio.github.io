@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>[STUDIO NAME] – Black & white analog photography studio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;1,6..72,300&family=Hanken+Grotesk:wght@400;500&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#F1EFE9;--ink:#171717;--char:#333333;--grey:#B8B4AD;--red:#8a2a22;--line:#17171733;
+--serif:"Newsreader",Georgia,serif;--sans:"Hanken Grotesk",system-ui,sans-serif;--mono:"JetBrains Mono",ui-monospace,monospace;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--paper:#171717;--ink:#F1EFE9;--char:#D6D3CC;--grey:#6d6a65;--red:#d36a60;--line:#f1efe933;color-scheme:dark}}
+:root[data-theme="dark"]{--paper:#171717;--ink:#F1EFE9;--char:#D6D3CC;--grey:#6d6a65;--red:#d36a60;--line:#f1efe933;color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 17px/1.6 var(--sans)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--paper);z-index:50}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--red);outline-offset:3px}
+h1,h2,h3{font-family:var(--serif);font-weight:300;line-height:1.02;margin:0;letter-spacing:-.02em}
+h1{font-size:clamp(2.8rem,8.5vw,7.5rem)}h2{font-size:clamp(2rem,4.6vw,3.8rem)}h3{font-size:1.6rem;font-weight:400}
+p{margin:0 0 1em;max-width:62ch;font-family:var(--serif);font-size:1.15rem;line-height:1.65;color:var(--char)}
+.m{font:400 .75rem/1.5 var(--mono);color:var(--char)}
+.wrap{padding:0 clamp(18px,4vw,56px);max-width:1500px;margin:0 auto}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;background:var(--paper);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
+.logo{font:400 1.25rem var(--serif);text-decoration:none;letter-spacing:.02em}
+nav{display:flex;gap:26px;align-items:center}
+nav a{text-decoration:none;font-size:.9rem;padding:6px 0;border-bottom:1px solid transparent;transition:border-color .2s}
+nav a:hover,nav a[aria-current]{border-color:var(--ink)}
+.btn{display:inline-block;font:500 .9rem var(--sans);padding:13px 22px;border:1px solid var(--ink);background:var(--ink);color:var(--paper);text-decoration:none;cursor:pointer;transition:background .2s,color .2s}
+.btn:hover{background:transparent;color:var(--ink)}.btn.o{background:transparent;color:var(--ink)}.btn.o:hover{background:var(--ink);color:var(--paper)}
+#mb{display:none;background:none;border:1px solid var(--ink);color:var(--ink);padding:8px 14px;font:inherit;cursor:pointer}
+@media(max-width:900px){#mb{display:block}nav{display:none;position:absolute;top:64px;left:0;right:0;background:var(--paper);flex-direction:column;align-items:flex-start;padding:20px clamp(18px,4vw,56px) 28px;border-bottom:1px solid var(--line);gap:14px}nav.open{display:flex}}
+section{padding:clamp(56px,9vw,130px) 0;border-top:1px solid var(--line)}
+.grid{display:grid;grid-template-columns:repeat(12,1fr);gap:clamp(14px,2vw,32px)}
+.ph{position:relative;background:var(--char);overflow:hidden;display:flex;align-items:flex-end}
+.ph::before{content:"";position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .55 0'/%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23n)'/%3E%3C/svg%3E");opacity:.5;mix-blend-mode:overlay}
+.ph.l{background:var(--grey)}.ph.d{background:var(--ink);outline:1px solid var(--line)}
+.ph span{position:relative;font:400 .7rem/1.4 var(--mono);color:#F1EFE9;padding:10px 12px;background:#171717b3;margin:10px}
+.cap{font:400 .72rem/1.5 var(--mono);color:var(--char);margin-top:8px}
+.v{writing-mode:vertical-rl;transform:rotate(180deg);font:400 .72rem var(--mono);color:var(--char);align-self:start}
+.svc{display:grid;grid-template-columns:60px 1fr auto;gap:20px;align-items:baseline;padding:26px 0;border-top:1px solid var(--line);text-decoration:none;transition:padding .25s}
+.svc:hover{padding-left:14px}.svc:last-child{border-bottom:1px solid var(--line)}
+table{width:100%;border-collapse:collapse;font:400 .85rem var(--mono)}td,th{padding:12px 6px;border-top:1px solid var(--line);text-align:left;vertical-align:top;color:var(--char)}th{font-weight:400;color:var(--ink)}
+td:last-child,th:last-child{text-align:right}
+details{border-top:1px solid var(--line);padding:16px 0}details:last-of-type{border-bottom:1px solid var(--line)}
+summary{cursor:pointer;font:400 1.3rem var(--serif);list-style:none;display:flex;justify-content:space-between}summary::after{content:"+";font-family:var(--mono)}details[open] summary::after{content:"–"}
+details p{margin:12px 0 0}
+form{display:grid;gap:16px;max-width:620px}label{display:grid;gap:6px;font:400 .75rem var(--mono);color:var(--char)}
+input,select,textarea{font:400 1rem var(--sans);padding:12px;border:1px solid var(--ink);background:transparent;color:var(--ink);border-radius:0;width:100%}
+.ok{border:1px solid var(--red);padding:14px;font:400 .85rem var(--mono);color:var(--red)}
+.chips{display:flex;gap:10px;flex-wrap:wrap}.chip{font:400 .8rem var(--mono);padding:8px 14px;border:1px solid var(--ink);background:transparent;color:var(--ink);cursor:pointer}
+.chip[aria-pressed=true]{background:var(--ink);color:var(--paper)}
+.tl{display:grid;grid-template-columns:90px 1fr;gap:6px 20px;padding:14px 0;border-top:1px solid var(--line)}
+.notice{border:1px solid var(--red);padding:12px 16px;font:400 .8rem var(--mono);color:var(--red);max-width:620px}
+.hero{min-height:calc(100svh - 64px);display:flex;flex-direction:column;justify-content:flex-end;padding-bottom:40px}
+.reveal{animation:rv 1.1s ease both}@keyframes rv{from{opacity:0}to{opacity:1}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+.c3{grid-column:span 3}.c4{grid-column:span 4}.c5{grid-column:span 5}.c6{grid-column:span 6}.c7{grid-column:span 7}.c8{grid-column:span 8}.c12{grid-column:1/-1}
+@media(max-width:800px){.grid>*{grid-column:1/-1!important}.v{display:none}.svc{grid-template-columns:36px 1fr}.svc .m:last-child{display:none}}
+footer{border-top:1px solid var(--ink);padding:48px 0 60px}
+</style>
+</head>
+<body>
+<header><div class="wrap"><a class="logo" href="#home">[STUDIO NAME]</a>
+<button id="mb" aria-expanded="false" aria-controls="nav">Menu</button>
+<nav id="nav" aria-label="Main"><a href="#film-lab">Film lab</a><a href="#darkroom">Print</a><a href="#rental">Rental</a><a href="#club">Club F/65</a><a href="#journal">Journal</a><a href="#about">About</a><a class="btn" href="#film-lab-order">Order film</a></nav></div></header>
+<main id="app" tabindex="-1"></main>
+<footer><div class="wrap grid">
+<div class="c4"><div class="logo">[STUDIO NAME]</div><p class="m" style="margin-top:12px">Black-and-white film. Handmade prints.<br>No scanning. No colour.</p></div>
+<div class="c4 m">Address line, City<br>Tue–Sat 10:00–18:00<br>hello@studio.example<br>Instagram @studioname</div>
+<div class="c4 m"><a href="#film-lab-faq">FAQ</a><br><a href="#film-lab">Film lab</a><br><a href="#rental">Camera rental</a><br><a href="#club">Club F/65</a></div>
+</div></footer>
+<script>
+/* ===== EDITABLE CONTENT ===== */
+const DATA={
+ prices:[["35mm develop","36 exp.","€ 00"],["120 develop","per roll","€ 00"],["4×5 sheet develop","per sheet","€ 00"],["Push / pull","per stop, per roll","+ € 00"]],
+ turnaround:"5–7 working days (placeholder)",
+ cameras:[
+  {id:"slr",name:"Camera 01 · 35mm SLR",fmt:"35mm",avail:true,lens:"50mm f/1.8",day:"€ 00",wk:"€ 00",dep:"€ 000",cond:"Excellent, light wear on the body",acc:"Strap, lens cap, one battery",desc:"A mechanical workhorse. Manual focus, manual exposure, a meter that still tells the truth.",spec:"Shutter 1–1/1000 s · TTL meter"},
+  {id:"cmp",name:"Camera 02 · 35mm compact",fmt:"35mm",avail:true,lens:"35mm f/2.8 fixed",day:"€ 00",wk:"€ 00",dep:"€ 000",cond:"Very good",acc:"Case, strap",desc:"Fits a coat pocket. For walking, for noticing.",spec:"Zone focus · leaf shutter"},
+  {id:"mf",name:"Camera 03 · Medium format",fmt:"120",avail:false,lens:"80mm f/2.8",day:"€ 00",wk:"€ 00",dep:"€ 000",cond:"Good, fully serviced",acc:"Waist-level finder, 2 backs",desc:"Twelve square frames per roll. Each one has to count.",spec:"6×6 · leaf shutter · waist-level finder"},
+  {id:"lf",name:"Camera 04 · Large format 4×5",fmt:"4×5",avail:true,lens:"150mm f/5.6",day:"€ 00",wk:"€ 00",dep:"€ 000",cond:"Good, bellows checked",acc:"Tripod, 3 film holders, dark cloth",desc:"Upside-down image on a ground glass. A slow, deliberate way of seeing.",spec:"Rise/fall/shift/tilt · Copal shutter"}],
+ club:[{id:"c1",date:"Sat 12 Dec 2026",place:"Coastal path (placeholder)",left:3},{id:"c2",date:"Sat 16 Jan 2027",place:"Old harbour (placeholder)",left:5},{id:"c3",date:"Sat 20 Feb 2027",place:"Forest edge (placeholder)",left:6}],
+ dr:[{id:"d1",date:"Sun 6 Dec 2026, 10:00–14:00",left:4},{id:"d2",date:"Sun 10 Jan 2027, 10:00–14:00",left:6}],
+ sched:[["09:00","Meet at the studio"],["09:30","Introduction to large-format photography"],["10:30","Photography outing"],["13:00","Lunch and break"],["14:00","Return to the studio"],["14:30","Develop the 4×5 negatives"],["16:00","View and discuss on the light table"],["17:00","Finish"]],
+ journal:[["Darkroom notes","Why the test strip comes first","Nov 2026"],["Film notes","Pushing HP5 to 1600","Oct 2026"],["Club F/65 stories","Fog on the harbour","Oct 2026"],["Camera stories","The quiet shutter of a leaf lens","Sep 2026"],["Photographs","Eleven frames, one afternoon","Sep 2026"],["Studio journal","New trays, old habits","Aug 2026"]]
+};
+const ph=(cap,cls="",ratio="4/5",extra="")=>`<div class="ph ${cls}" style="aspect-ratio:${ratio};${extra}" role="img" aria-label="Placeholder: ${cap}"><span>Replace image: ${cap}</span></div>`;
+const faq=(a)=>a.map(([q,t])=>`<details><summary>${q}</summary><p>${t}</p></details>`).join("");
+const form=(id,fields,btn)=>`<form id="${id}" data-f>${fields}<button class="btn" type="submit">${btn}</button><p class="m" style="margin:0">Front-end only. Connect to your email service or a form backend (Formspree, Netlify Forms, a custom API) to receive submissions.</p></form>`;
+const inp=(l,t="text",n)=>`<label>${l}<input type="${t}" name="${n||l}" required></label>`;
+const sel=(l,o)=>`<label>${l}<select>${o.map(x=>`<option>${x}</option>`).join("")}</select></label>`;
+const head=(t,s,m)=>`<section style="border:0;padding-bottom:40px"><div class="wrap"><p class="m">${m||""}</p><h1 class="reveal">${t}</h1>${s?`<p style="margin-top:28px;font-size:1.35rem">${s}</p>`:""}</div></section>`;
+
+/* ===== PAGES ===== */
+const P={};
+P.home=()=>`
+<div class="wrap hero"><div class="grid" style="align-items:end">
+<div class="c8"><p class="m">Black-and-white analog photography studio</p><h1 class="reveal">Photography doesn’t end when you press the shutter.</h1></div>
+<div class="c4">${ph("Hero: hands lifting a print from the developer tray","d","3/4")}<p class="cap">Fig. 1 — Silver gelatin print, developer tray.</p></div></div>
+<p style="margin-top:32px">We develop black-and-white film, make prints by hand in the darkroom, lend analog cameras, and take small groups out with 4×5 cameras. You leave with something physical.</p>
+<div class="chips"><a class="btn" href="#film-lab-order">Develop your film</a><a class="btn o" href="#club">Explore Club F/65</a></div></div>
+<section><div class="wrap grid"><div class="v c12" style="display:none"></div>
+<div class="c4"><h2>Four ways in</h2></div><div class="c8">
+<a class="svc" href="#film-lab"><span class="m">01</span><span><h3>Film lab</h3><span class="m">35mm, 120, 4×5. Negatives returned. No scanning.</span></span><span class="m">from € 00</span></a>
+<a class="svc" href="#darkroom"><span class="m">02</span><span><h3>Darkroom experience</h3><span class="m">Four hours. From negative to print.</span></span><span class="m">€ 000</span></a>
+<a class="svc" href="#rental"><span class="m">03</span><span><h3>Camera rental</h3><span class="m">A library of working analog cameras.</span></span><span class="m">from € 00/day</span></a>
+<a class="svc" href="#club"><span class="m">04</span><span><h3>Club F/65</h3><span class="m">One day, a 4×5 camera, four to six people.</span></span><span class="m">€ 000</span></a></div></div></section>
+<section><div class="wrap grid"><div class="c5">${ph("Featured photograph, vertical","l","4/5")}<p class="cap">Plate 1 — [Title], 2026. Silver gelatin print, 24×30 cm.</p></div>
+<div class="c7" style="align-self:end"><div class="grid"><div class="c6" style="grid-column:span 6">${ph("Featured photograph, landscape","d","3/2")}</div><div class="c6">${ph("Contact sheet","l","3/2")}</div></div>
+<h2 style="margin-top:48px">Keep photography physical.</h2><p style="margin-top:20px">A negative can be held to the light. A print has a smell, a weight, a surface. We work slowly, with our hands, and we think the imperfections are part of the picture.</p><a class="btn o" href="#about">About the studio</a></div></div></section>
+<section><div class="wrap grid"><div class="c4"><p class="m">Next outing</p><h2>${DATA.club[0].date}</h2><p style="margin-top:16px">${DATA.club[0].place}. ${DATA.club[0].left} places left.</p><a class="btn" href="#club">See the day</a></div><div class="c8">${ph("Photographer under a dark cloth, large-format camera outdoors","d","16/9")}</div></div></section>
+<section><div class="wrap"><div class="grid"><div class="c4"><h2>From the camera library</h2></div><div class="c8 grid">${DATA.cameras.slice(0,3).map(c=>`<a class="c4" style="grid-column:span 4;text-decoration:none" href="#rental">${ph(c.name,"l","1/1")}<p class="cap">${c.name}<br>${c.day}/day</p></a>`).join("")}</div></div></div></section>
+<section><div class="wrap grid"><div class="c6"><h2>Visit</h2></div><div class="c6 m"><p class="m">Address line, City<br>Tue–Sat 10:00–18:00 · Sun by appointment<br>Drop-off and collection at the front desk.</p></div></div></section>`;
+
+P["film-lab"]=()=>`${head("Film lab","We process black-and-white film by hand and return your negatives. That is all we do, and we do it carefully.","Film lab")}
+<section><div class="wrap grid"><div class="c5"><h2>What we accept</h2><p style="margin-top:20px">35mm and 120 black-and-white film. 4×5 sheet film (placeholder: confirm if offered). Push and pull processing on request.</p><div class="notice">No scanning is offered. No colour film is processed.</div></div>
+<div class="c7"><table><tr><th>Service</th><th>Unit</th><th>Price</th></tr>${DATA.prices.map(r=>`<tr><td>${r[0]}</td><td>${r[1]}</td><td>${r[2]}</td></tr>`).join("")}</table><p class="m" style="margin-top:12px">Turnaround: ${DATA.turnaround}. Prices are placeholders.</p></div></div></section>
+<section><div class="wrap grid"><div class="c4"><h2>How it works</h2></div><div class="c8">
+${["Wind the film back into its canister, or wrap your sheet film holder. Label each roll in pencil.","Fill in the form below and bring your film to the studio, or post it in a padded envelope.","We develop, wash and dry the film by hand.","Collect your negatives in archival sleeves. They are yours to hold, scan elsewhere, or print with us."].map((t,i)=>`<div class="tl"><span class="m">Step ${i+1}</span><p style="margin:0">${t}</p></div>`).join("")}</div></div></section>
+<section id="film-lab-order"><div class="wrap grid"><div class="c4"><h2>Order enquiry</h2></div><div class="c8">${form("order",inp("Name")+inp("Email","email")+sel("Film format",["35mm","120","4×5 sheet"])+inp("Film type (e.g. HP5, Tri-X)")+inp("Number of rolls","number")+sel("Processing",["Standard","Push","Pull"])+`<label>Push/pull instructions<input></label><label>Notes<textarea rows="3"></textarea></label>`,"Send enquiry")}</div></div></section>
+<section id="film-lab-faq"><div class="wrap grid"><div class="c4"><h2>FAQ</h2></div><div class="c8">${faq([["Do you scan?","No. You receive physical negatives only."],["Do you process colour film?","No. We work with black-and-white only."],["Can you push or pull?","Yes, on request. Tell us the box speed and the speed you shot at."]])}</div></div></section>`;
+
+P.darkroom=()=>`${head("From negative to print.","Four hours in the darkroom. Learn the art of making your own black-and-white photographs, from the negative to the final silver gelatin print.","Darkroom experience")}
+<section><div class="wrap grid"><div class="c7">${ph("Wide: darkroom with enlarger and trays","d","16/9")}</div>
+<div class="c5 m"><table><tr><td>Duration</td><td>4 hours</td></tr><tr><td>Level</td><td>Beginners welcome</td></tr><tr><td>Group size</td><td>Max. 4 (placeholder)</td></tr><tr><td>Price</td><td>€ 000 (placeholder)</td></tr><tr><td>Included</td><td>Paper, chemistry, equipment</td></tr></table>
+<p style="margin-top:20px">Photograph first with your own analog camera, or rent one from us. Develop your film before the workshop, or have us do it. Bring the negatives.</p></div></div></section>
+<section><div class="wrap"><h2 style="margin-bottom:40px">The process, in six steps</h2><div class="grid">
+${["Choose the negative on the light table","Place it in the enlarger and focus","Set aperture and exposure time with a test strip","Expose the paper","Develop, stop and fix in trays","Wash, dry and hold the print"].map((t,i)=>`<div class="c4" style="grid-column:span 4">${ph(t,i%2?"d":"l","4/3")}<p class="cap">${i+1}. ${t}</p></div>`).join("")}</div></div></section>
+<section><div class="wrap grid"><div class="c4"><h2>What you learn</h2></div><div class="c8"><p>The traditional darkroom, how to read a negative, how an enlarger works, and how focus, aperture, exposure and contrast shape the final image. You also learn about photographic paper and chemistry, and take your finished silver gelatin prints home.</p><p class="notice">Film must be developed before the workshop. This is separate from Club F/65, which is an outdoor 4×5 photography day.</p></div></div></section>
+<section><div class="wrap grid"><div class="c4"><h2>Book a session</h2></div><div class="c8">${form("dr",inp("Name")+inp("Email","email")+`<label>Date<select>${DATA.dr.map(d=>`<option>${d.date} · ${d.left} places</option>`)}</select></label>`+sel("Camera",["I have my own","I would like to rent one"])+`<label>Notes<textarea rows="3"></textarea></label>`,"Request a place")}</div></div></section>
+<section><div class="wrap grid"><div class="c4"><h2>What to bring</h2></div><div class="c8"><p>Your developed black-and-white negatives, ideally 6–10 frames you like. Closed shoes. Curiosity.</p>${faq([["Can I bring colour negatives?","No. The workshop uses black-and-white negatives only."],["Do I take the prints home?","Yes, once they are dry."],["I have no camera.","Rent one from us beforehand and we can develop the film too."]])}</div></div></section>`;
+
+let cf={fmt:"All",av:false};
+P.rental=()=>`${head("Camera library","Working analog cameras, each with its own profile. Rent for a day or a weekend, and pair with film and developing.","Camera rental")}
+<section style="padding-top:30px"><div class="wrap"><div class="chips" id="flt">${["All","35mm","120","4×5"].map(f=>`<button class="chip" data-fmt="${f}" aria-pressed="${cf.fmt==f}">${f}</button>`).join("")}<button class="chip" data-av aria-pressed="${cf.av}">Available only</button></div></div></section>
+<div id="cams"></div>`;
+const camList=()=>DATA.cameras.filter(c=>(cf.fmt=="All"||c.fmt==cf.fmt)&&(!cf.av||c.avail)).map((c,i)=>`<section><div class="wrap grid"><div class="c6" style="order:${i%2?2:1}">${ph(c.name,i%2?"l":"d","4/3")}</div>
+<div class="c6" style="order:${i%2?1:2}"><p class="m">${c.fmt} · ${c.avail?"Available":"Out on rental"}</p><h2>${c.name}</h2><p style="margin-top:16px">${c.desc}</p>
+<table><tr><td>Lens</td><td>${c.lens}</td></tr><tr><td>Specs</td><td>${c.spec}</td></tr><tr><td>Condition</td><td>${c.cond}</td></tr><tr><td>Includes</td><td>${c.acc}</td></tr><tr><td>Per day</td><td>${c.day}</td></tr><tr><td>Weekend</td><td>${c.wk}</td></tr><tr><td>Deposit</td><td>${c.dep}</td></tr></table>
+<p style="margin-top:20px"><a class="btn" href="#rental-book" data-cam="${c.name}">${c.avail?"Request booking":"Join waiting list"}</a></p></div></div></section>`).join("")||`<section><div class="wrap"><p>No cameras match. Clear a filter to see the full library.</p></div></section>`;
+P.rental2=()=>"";
+
+P.club=()=>`<div class="wrap hero"><p class="m">Club F/65 · small-group 4×5 outings</p><h1 class="reveal" style="max-width:15ch">One day. A large format camera. A different way of seeing.</h1><p style="margin-top:28px">Club F/65 is a small-group photographic outing built around 4×5 large-format photography. We meet, learn the camera, go out to photograph, return to the darkroom, and develop our own sheet film. A day dedicated to slowing down and experiencing photography from beginning to end.</p></div>
+<section><div class="wrap grid"><div class="c8">${ph("Photographers under dark cloths on location","d","16/9")}</div><div class="c4"><table><tr><td>Group</td><td>4–6 people</td></tr><tr><td>Level</td><td>Beginners welcome</td></tr><tr><td>Duration</td><td>09:00–17:00</td></tr><tr><td>Price</td><td>€ 000</td></tr><tr><td>Location</td><td>Studio + outdoor site</td></tr></table></div></div></section>
+<section><div class="wrap grid"><div class="c4"><h2>The day</h2></div><div class="c8">${DATA.sched.map((s,i)=>`<div class="tl"><span class="m">${s[0]}</span><span style="font:400 1.3rem var(--serif)">${s[1]}</span></div>`).join("")}</div></div></section>
+<section><div class="wrap grid">${["Prepare the camera","Leave the studio","Photograph outdoors","Develop sheet film","See the negatives"].map((t,i)=>`<div class="c4" style="grid-column:span ${i<2?6:4}">${ph(t,i%2?"l":"d",i<2?"3/2":"4/5")}<p class="cap">${t}</p></div>`).join("")}</div></section>
+<section><div class="wrap grid"><div class="c4"><h2>Included and what to bring</h2></div><div class="c4"><p>Included: 4×5 camera, tripod, lens, film holders, sheet film, chemistry, darkroom access, light table. You take your negatives home.</p></div><div class="c4"><p>Bring: weatherproof clothes, comfortable shoes, lunch, water and a notebook.</p></div></div></section>
+<section id="club-book"><div class="wrap grid"><div class="c4"><h2>Choose a date</h2></div><div class="c8"><div class="chips" id="dates" style="margin-bottom:24px">${DATA.club.map((d,i)=>`<button class="chip" data-d="${d.id}" aria-pressed="${i==0}">${d.date} · ${d.left} left</button>`).join("")}</div>${form("club",inp("Name")+inp("Email","email")+`<label>Participants<input type="number" min="1" max="6" value="1"></label>`+`<label>Experience<select><option>Complete beginner</option><option>Some film experience</option></select></label>`,"Request a place")}</div></div></section>
+<section><div class="wrap grid"><div class="c4"><h2>FAQ</h2></div><div class="c8">${faq([["Do I need experience?","No. Beginners are welcome."],["What if it rains?","We adapt the day. The darkroom half does not depend on weather."],["Is this the same as the Darkroom experience?","No. Club F/65 is outdoors with 4×5 sheet film. The Darkroom experience is a four-hour printing workshop."]])}</div></div></section>`;
+
+P.about=()=>`${head("A slower way to make photographs.","","About")}
+<section><div class="wrap grid"><div class="c5">${ph("Portrait of the studio, hands at work","l","4/5")}</div><div class="c6" style="grid-column:7/13;align-self:end">${["Slow photography","Working with your hands","The beauty of imperfections","The physical negative","Silver gelatin printing","Learning by trying","Preserving the process","Sharing photographs"].map((t,i)=>`<div class="tl"><span class="m">${i+1}</span><span style="font:300 1.5rem var(--serif)">${t}</span></div>`).join("")}</div></div></section>`;
+
+P.journal=()=>`${head("Journal","Notes from the darkroom, the camera library and the field.","Archive")}
+<section><div class="wrap grid">${DATA.journal.map((j,i)=>`<article class="c4" style="grid-column:span ${i%3==0?8:4}">${ph(j[1],i%2?"l":"d",i%3==0?"16/9":"4/5")}<p class="cap">${j[0]} · ${j[2]}</p><h3>${j[1]}</h3></article>`).join("")}</div></section>`;
+
+/* ===== ROUTER ===== */
+const app=document.getElementById("app");
+function route(){let h=(location.hash||"#home").slice(1);const sub=h.startsWith("film-lab-")?h:null;if(sub)h="film-lab";if(h=="rental-book")h="rental";
+ if(!P[h])h="home";app.innerHTML=P[h]();
+ document.querySelectorAll("nav a").forEach(a=>a.getAttribute("href")=="#"+h?a.setAttribute("aria-current","page"):a.removeAttribute("aria-current"));
+ document.title="[STUDIO NAME] – "+h;if(h=="rental")drawCams();
+ const t=sub&&document.getElementById(sub);t?t.scrollIntoView():window.scrollTo(0,0);
+ document.getElementById("nav").classList.remove("open");mb.setAttribute("aria-expanded","false")}
+function drawCams(){document.getElementById("cams").innerHTML=camList()+`<section id="rental-book"><div class="wrap grid"><div class="c4"><h2>Book a camera</h2></div><div class="c8">${form("rb",inp("Name")+inp("Email","email")+sel("Camera",DATA.cameras.map(c=>c.name))+`<label>From<input type="date"></label><label>To<input type="date"></label>`,"Request booking")}<p class="m" style="margin-top:12px">Availability is static placeholder data. A real booking system needs a backend.</p></div></div></section>`}
+const mb=document.getElementById("mb");
+mb.onclick=()=>{const o=document.getElementById("nav").classList.toggle("open");mb.setAttribute("aria-expanded",o)};
+addEventListener("hashchange",route);
+document.addEventListener("click",e=>{const b=e.target.closest("[data-fmt],[data-av],[data-d]");if(!b)return;
+ if(b.dataset.d){document.querySelectorAll("[data-d]").forEach(x=>x.setAttribute("aria-pressed",x==b));return}
+ if(b.hasAttribute("data-av"))cf.av=!cf.av;else cf.fmt=b.dataset.fmt;
+ document.querySelectorAll("[data-fmt]").forEach(x=>x.setAttribute("aria-pressed",x.dataset.fmt==cf.fmt));
+ document.querySelector("[data-av]").setAttribute("aria-pressed",cf.av);drawCams()});
+document.addEventListener("submit",e=>{if(!e.target.hasAttribute("data-f"))return;e.preventDefault();
+ e.target.insertAdjacentHTML("beforeend",`<div class="ok" role="status">Thank you. Your request is noted. (Demo only: nothing was sent.)</div>`)});
+route();
+</script>
+</body>
+</html>
