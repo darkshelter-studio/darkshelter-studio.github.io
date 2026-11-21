@@ -16,10 +16,57 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;1,6..72,300&family=Hanken+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <link id="studio-styles" rel="stylesheet" href="styles.css?v=535b4df51916">
   <title>DARKSHELTER · Analog photography in Moutoullas</title>
-  <script src="studio-config.js?v=20261121" defer></script>
-  <script src="app.js?v=20261121" defer></script>
+  <script type="module">
+    // Resolve the latest asset versions on every page load. No background polling.
+    const fallback = {"version": "8f325f2d94c4", "assets": {"styles.css": "styles.css?v=535b4df51916", "studio-config.js": "studio-config.js?v=85eea4de799b", "app.js": "app.js?v=3c3239e925f2"}};
+    const manifestUrl = new URL('version.json', location.href);
+    manifestUrl.search = '';
+    manifestUrl.hash = '';
+    async function latest() {
+      const response = await fetch(manifestUrl, {cache: 'no-store'});
+      if (!response.ok) throw new Error('Version manifest unavailable');
+      const value = await response.json();
+      if (!value.version || !value.assets) throw new Error('Invalid version manifest');
+      for (const key of ['styles.css', 'studio-config.js', 'app.js']) {
+        const url = new URL(value.assets[key], manifestUrl);
+        if (url.origin !== location.origin || url.pathname !== new URL(key, manifestUrl).pathname) throw new Error('Invalid asset URL');
+      }
+      return value;
+    }
+    let current;
+    try { current = await latest(); } catch { current = fallback; }
+    document.getElementById('studio-styles').href = current.assets['styles.css'];
+    for (const name of ['studio-config.js', 'app.js']) {
+      await new Promise((resolve, reject) => {
+        const script = document.createElement('script');
+        script.src = current.assets[name];
+        script.onload = resolve;
+        script.onerror = reject;
+        document.head.appendChild(script);
+      });
+    }
+    let lastCheck = Date.now();
+    let checking = false;
+    async function checkForUpdate(force = false) {
+      if (document.hidden || checking || (!force && Date.now() - lastCheck < 15000)) return;
+      checking = true;
+      lastCheck = Date.now();
+      try {
+        const next = await latest();
+        if (next.version !== current.version) {
+          const url = new URL(location.href);
+          url.searchParams.set('v', next.version);
+          location.replace(url.href);
+        }
+      } catch {} finally { checking = false; }
+    }
+    addEventListener('focus', () => checkForUpdate());
+    addEventListener('visibilitychange', () => checkForUpdate());
+    addEventListener('pageshow', event => { if (event.persisted) checkForUpdate(true); });
+    addEventListener('online', () => checkForUpdate(true));
+  </script>
 </head>
 <body>
   <a class="skip" href="#main-content">Skip to content</a>

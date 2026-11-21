@@ -12,3 +12,5 @@
 - Apply the available premium-product-ui and greek-product-copy standards. Preserve the user-approved original type/layout direction. Greek uppercase has no accents; ordinary Greek retains correct accents. Keep primary text readable and mobile inputs at 16px.
 - Global policy reference, v1.0: https://app.notion.com/p/40225b0f2c8b814ead83c43d65914316 . Recommend an economical suitable model and disclose credit impact before substantial work. Do not claim an unverified model switch.
 - Reuse the verification in AUDIT.md until a relevant change invalidates it. Report implemented, tested and deployed separately. Never claim complete native-iPhone verification from desktop mobile frames.
+
+- Every release must update `version.json`: SHA-256 content hashes in styles.css, studio-config.js and app.js query strings; update the overall version when any public content or image changes. The inline index.html loader fetches this manifest with no-store on page load and rechecks on foreground events. Never publish changed assets without updating the manifest.
