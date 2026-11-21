@@ -1,6 +1,6 @@
 # DARKSHELTER · the digital darkroom
 
-Complete studio concept for Grigoris's handmade analog photography darkroom in Moutoullas, Cyprus.
+Complete studio concept for the studio’s handmade analog photography darkroom in Moutoullas, Cyprus.
 
 **Site:** https://darkshelter-studio.github.io/
 
@@ -24,6 +24,6 @@ No build or dependencies are needed. Run `python3 -m http.server 8080` and open 
 
 ## Before accepting real customers
 
-Approve the proposed business details, prices, dates and imagery with Grigoris. Replace the reserved `.example` address. Connect a transactional booking backend and email provider; do not merely change `mode` to `live`. The optional `/requests` API bridge expects a persisted `booking` object. Capacity and rental conflicts must be checked transactionally on the server with idempotency, rate limiting and email retry handling. Configure the final operator, privacy and cancellation terms. Confirm hosting suitability for real commercial bookings before enabling them; this GitHub Pages publication is a studio preview.
+Approve the proposed business details, prices, dates and imagery with the studio. Replace the reserved `.example` address. Connect a transactional booking backend and email provider; do not merely change `mode` to `live`. The optional `/requests` API bridge expects a persisted `booking` object. Capacity and rental conflicts must be checked transactionally on the server with idempotency, rate limiting and email retry handling. Configure the final operator, privacy and cancellation terms. Confirm hosting suitability for real commercial bookings before enabling them; this GitHub Pages publication is a studio preview.
 
 See [AUDIT.md](AUDIT.md), [IMAGE-CREDITS.md](IMAGE-CREDITS.md) and [AGENTS.md](AGENTS.md).

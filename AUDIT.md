@@ -48,8 +48,8 @@ Date: 20 November 2026. Scope: complete the original studio prototype as an expl
 ## Practical limits
 
 - This is a complete proposal, not an enabled production booking backend. Demo requests live only on the same device. Cross-device inventory/booking consistency and real email delivery have not been implemented or claimed.
-- No card or payment integration is enabled. Proposed sessions, rates, camera availability, contact email and hours need Grigoris's approval before real use.
-- Images are visual proposals, not real documentary photographs of Grigoris or his property.
+- No card or payment integration is enabled. Proposed sessions, rates, camera availability, contact email and hours need the studio’s approval before real use.
+- Images are visual proposals, not real documentary photographs of the studio or its property.
 - Mobile frames validate responsive layout. Native iPhone Safari keyboard, standalone mode and physical safe-area behavior remain unverified on a real device.
 - No claim is made that every possible browser, date range, storage failure or concurrent-client case was exhaustively tested.
 

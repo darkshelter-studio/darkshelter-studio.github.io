@@ -4,7 +4,7 @@ window.STUDIO = {
   mode: 'preview',
   apiUrl: '',
   name: 'DARKSHELTER',
-  host: 'Grigoris',
+  host: 'DARKSHELTER',
   location: {el:'Μουτουλλάς · Μαραθάσα · Κύπρος',en:'Moutoullas · Marathasa · Cyprus'},
   email: 'hello@darkshelter.example',
   visitHours: {el:'Πέμπτη–Κυριακή · 10:00–18:00, με ραντεβού',en:'Thursday–Sunday · 10:00–18:00, by appointment'},

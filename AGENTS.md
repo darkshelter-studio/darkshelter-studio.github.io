@@ -2,9 +2,9 @@
 
 - Canonical repository: `darkshelter-studio/darkshelter-studio.github.io`; organization owner: adamidisch.
 - Intended public preview: https://darkshelter-studio.github.io/ . GitHub Pages source is `main` at root.
-- The project is the digital companion to Grigoris's physical, homemade, low-budget analog darkroom in Moutoullas, Cyprus. The user expects us to take ownership of the complete online proposal, not block on routine content decisions.
+- The project is the digital companion to the studio’s physical, homemade, low-budget analog darkroom in Moutoullas, Cyprus. The user expects us to take ownership of the complete online proposal, not block on routine content decisions.
 - Latest explicit user direction: keep the original site and its editorial identity. Upgrade and complete it. The briefly discussed GitHub-style landing redesign is superseded.
-- The user explicitly authorized invented proposed prices, dates, contact details and AI-created photographic imagery, to be replaced or approved by Grigoris later. Do not repeatedly ask for those details as a prerequisite to completing the preview.
+- The user explicitly authorized invented proposed prices, dates, contact details and AI-created photographic imagery, to be replaced or approved by the studio later. Do not repeatedly ask for those details as a prerequisite to completing the preview.
 - Keep the preview identifiable as a proposal. Do not claim generated pictures document the real studio, send messages to invented recipients, collect real payments or show simulated reservations as genuine. Keep the .example contact address safe until a verified studio address is supplied.
 - Preserve `reference-original.html` unchanged. Original SHA-256: c478f0c63eeda28165a4f6f354b14b2313ce248b1e179d058251e5966f68a202.
 - `studio-config.js` centralizes replaceable business details and the preview/live mode. Current local demo persistence is not a production booking database. A live API must enforce capacity and rental conflicts transactionally, validate input and manage durable email delivery.
