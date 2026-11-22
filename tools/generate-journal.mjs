@@ -20,10 +20,9 @@ const json = (name) => {
 };
 const ARTICLES = json('ARTICLES'), JSEO = json('JOURNAL_SEO');
 const pair = key => { const r = [...app.matchAll(new RegExp(key + ":'([^']*)'", 'g'))].map(m => m[1]); if (r.length < 2) throw new Error('copy ' + key); return { en: r[0], el: r[1] }; };
-const COPY = Object.fromEntries(['journalTitle', 'journalLead', 'readArticle', 'backJournal', 'relatedNotes', 'viewImage'].map(k => [k, pair(k)]));
+const COPY = Object.fromEntries(['journalTitle', 'journalLead', 'readArticle', 'backJournal', 'relatedNotes'].map(k => [k, pair(k)]));
 const navMatches = [...app.matchAll(/nav:\['([^']*)','([^']*)','([^']*)','([^']*)'/g)];
 const KICKER = { en: navMatches[0][4], el: navMatches[1][4] };
-const PHOTOS = Object.fromEntries([...app.matchAll(/(\w+):\{file:'([^']+)',width:(\d+),height:(\d+)/g)].map(m => [m[1], { file: m[2], width: +m[3], height: +m[4] }]));
 
 const origin = (shell.match(/<link rel="canonical" href="([^"]+)"/) || [])[1];
 if (!origin) throw new Error('canonical not found in index.html');
@@ -32,17 +31,14 @@ const hub = lang => (lang === 'el' ? 'el/' : '') + 'journal/';
 const urlFor = (lang, id) => origin + hub(lang) + (id ? id + '/' : '');
 const rel = (lang, id) => (lang === 'el' ? '../' : '') + '../' + (id ? '../' : '');   // path from the page back to the site root
 
-function photo(a, lang, ratio, color, eager) {
-  const p = PHOTOS[a.img.key], alt = esc(a.img.alt[lang]), z = a.img.zoom ?? 1;
-  return `<button type="button" class="photo ${color ? 'color' : ''}" style="aspect-ratio:${ratio};width:100%;padding:0;border:0" data-photo="${a.img.key}" aria-label="${esc(COPY.viewImage[lang])}: ${alt}"><img src="${p.file}.webp" srcset="${p.file}-small.webp 720w, ${p.file}.webp ${p.width}w" sizes="(max-width:760px) 140vw, 85vw" width="${p.width}" height="${p.height}" style="object-position:${a.img.pos};${z > 1 ? 'transform:scale(' + z + ');transform-origin:' + a.img.pos : ''}" alt="${alt}" loading="${eager ? 'eager' : 'lazy'}" decoding="async" ${eager ? 'fetchpriority="high"' : ''}></button>`;
-}
+const pad2 = n => String(n).padStart(2, '0');
 const byId = id => ARTICLES.find(x => x.id === id);
 function articleMain(a, lang) {
-  const t = a[lang], e = a.end && a.end[lang];
-  return `<div class="page-head"><div class="article"><a class="text-link" href="${hub(lang)}">${esc(COPY.backJournal[lang])}</a><p class="eyebrow space-top">${esc(t.cat)}</p><h1>${esc(t.title)}</h1><p class="lead">${esc(t.sub)}</p></div></div><article class="article">${photo(a, lang, '3/2', a.id === ARTICLES[0].id, true)}<div class="space-top">${t.body.map(p => `<p>${esc(p)}</p>`).join('')}${e ? `<p>${esc(e.pre)}<a class="text-link" href="${esc(a.end.href)}">${esc(e.label)}</a>${esc(e.post)}</p>` : ''}</div><div class="space-top related"><p class="eyebrow">${esc(COPY.relatedNotes[lang])}</p>${a.related.map(byId).map(r => `<p><a class="text-link" href="${hub(lang)}${r.id}/">${esc(r[lang].title)}</a></p>`).join('')}</div><div class="space-top space-bottom"><div class="actions"><a class="btn outline" href="${hub(lang)}">${esc(COPY.backJournal[lang])}</a></div></div></article>`;
+  const t = a[lang], e = a.end && a.end[lang], n = ARTICLES.indexOf(a) + 1;
+  return `<div class="page-head"><div class="article"><a class="text-link" href="${hub(lang)}">${esc(COPY.backJournal[lang])}</a><p class="eyebrow space-top"><span class="j-no">${pad2(n)} / ${pad2(ARTICLES.length)}</span> · ${esc(t.cat)}</p><h1>${esc(t.title)}</h1><p class="lead">${esc(t.sub)}</p></div></div><article class="article j-article"><div class="j-body">${t.body.map(p => `<p>${esc(p)}</p>`).join('')}${e ? `<p>${esc(e.pre)}<a class="text-link" href="${esc(a.end.href)}">${esc(e.label)}</a>${esc(e.post)}</p>` : ''}</div><span class="j-end" aria-hidden="true"></span><div class="related"><p class="eyebrow">${esc(COPY.relatedNotes[lang])}</p>${a.related.map(byId).map(r => `<p><span class="j-no">${pad2(ARTICLES.indexOf(r) + 1)}</span><a class="text-link" href="${hub(lang)}${r.id}/">${esc(r[lang].title)}</a></p>`).join('')}</div><div class="space-top space-bottom"><div class="actions"><a class="btn outline" href="${hub(lang)}">${esc(COPY.backJournal[lang])}</a></div></div></article>`;
 }
 function hubMain(lang) {
-  return `<div class="page-head"><div class="wrap"><p class="eyebrow">${esc(KICKER[lang])}</p><h1 class="fade-in">${esc(COPY.journalTitle[lang])}</h1><p class="lead">${esc(COPY.journalLead[lang])}</p></div></div><section class="section"><div class="wrap grid">${ARTICLES.map((x, i) => `<article class="c4">${photo(x, lang, '4/5', false, i === 0).replace('3/2', '4/5')}<a class="journal-item" href="${hub(lang)}${x.id}/"><p class="eyebrow space-top">${esc(x[lang].cat)}</p><h3>${esc(x[lang].title)}</h3><p class="meta">${esc(x[lang].sub)}</p><span class="text-link">${esc(COPY.readArticle[lang])}</span></a></article>`).join('')}</div></section>`;
+  return `<div class="page-head"><div class="wrap"><p class="eyebrow">${esc(KICKER[lang])}</p><h1 class="fade-in">${esc(COPY.journalTitle[lang])}</h1><p class="lead">${esc(COPY.journalLead[lang])}</p></div></div><section class="section"><div class="wrap grid journal-grid">${ARTICLES.map((x, i) => `<article class="c4 journal-card"><a class="journal-item" href="${hub(lang)}${x.id}/"><p class="eyebrow j-meta"><span class="j-no">${pad2(i + 1)}</span><span>${esc(x[lang].cat)}</span></p><h3>${esc(x[lang].title)}</h3><p class="meta">${esc(x[lang].sub)}</p><span class="text-link">${esc(COPY.readArticle[lang])}</span></a></article>`).join('')}</div></section>`;
 }
 
 function page({ lang, id }) {
@@ -50,7 +46,8 @@ function page({ lang, id }) {
   const title = (a ? a.seo[lang].title : JSEO[lang].title) + ' · DARKSHELTER';
   const desc = a ? a.seo[lang].desc : JSEO[lang].desc;
   const canonical = urlFor(lang, id);
-  const image = origin + PHOTOS[a ? a.img.key : 'darkroom'].file + '.webp';
+  const image = (shell.match(/<meta property="og:image" content="([^"]+)"/) || [])[1];
+  if (!image) throw new Error('og:image not found in index.html');
   const alternates = ['en', 'el'].map(l => `  <link rel="alternate" hreflang="${l}" href="${urlFor(l, id)}">`).join('\n') + `\n  <link rel="alternate" hreflang="x-default" href="${urlFor('en', id)}">`;
   const ld = a ? `\n  <script type="application/ld+json">${JSON.stringify({ '@context': 'https://schema.org', '@type': 'Article', headline: a[lang].title, description: desc, inLanguage: lang, image: [image], mainEntityOfPage: { '@type': 'WebPage', '@id': canonical }, author: { '@type': 'Organization', name: 'DARKSHELTER' }, publisher: { '@type': 'Organization', name: 'DARKSHELTER' } }).replace(/</g, '\\u003c')}</script>` : '';
   let h = shell;
