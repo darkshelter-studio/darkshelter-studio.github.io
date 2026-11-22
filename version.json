@@ -1,8 +1,8 @@
 {
-  "version": "8f325f2d94c4",
+  "version": "b1d85a3bd7db",
   "assets": {
-    "styles.css": "styles.css?v=535b4df51916",
-    "studio-config.js": "studio-config.js?v=85eea4de799b",
-    "app.js": "app.js?v=3c3239e925f2"
+    "styles.css": "styles.css?v=2552432cdfc4",
+    "studio-config.js": "studio-config.js?v=1845380094e5",
+    "app.js": "app.js?v=f9218526f539"
   }
 }

@@ -6,13 +6,13 @@ Complete studio concept for the studio’s handmade analog photography darkroom 
 
 ## What is implemented
 
-The original editorial layout, serif typography, paper/ink palette and restrained darkroom red are retained. The site includes film developing, printing workshops, camera rental, Club F/65, journal articles, studio information and contact. All screens have English/Greek copy and light/dark backgrounds.
+The original editorial layout, serif typography, paper/ink palette and restrained darkroom red are retained. The site includes printing workshops, camera rental, Club F/65, journal articles, studio information and contact. All screens have English/Greek copy and light/dark backgrounds.
 
 The preview supports session/date selection, participant limits, price calculations, local demo requests, confirmation, cancellation, calendar (.ics) download and confirmation-email (.eml) previews. No real message, reservation or payment is sent or collected. A short preview notice stays visible; detailed disclosures are at `#preview`.
 
 ## Edit the proposal
 
-- `studio-config.js`: proposed contact email, opening hours, film/workshop prices, dates, capacity and camera details.
+- `studio-config.js`: proposed contact email, opening hours, workshop prices, dates, capacity and camera details.
 - `app.js`: both languages, content and interactions.
 - `styles.css`: responsive presentation.
 - `darkroom*.webp`, `village*.webp`, `workshop*.webp`, `cameras*.webp`: AI-created visual proposals, ready to replace with the analog studio's real photographs.

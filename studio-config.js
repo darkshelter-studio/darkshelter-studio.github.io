@@ -11,7 +11,7 @@ window.STUDIO = {
   mapUrl:'https://www.google.com/maps/search/?api=1&query=Moutoullas%2C%20Cyprus',
   timezone:'Europe/Nicosia',
   defaultLanguage:'en',
-  prices:{film35:8,film120:10,sheet:6,pushPull:2,darkroom:85,club:145},
+  prices:{darkroom:85,club:145},
   sessions:[
     {id:'dr-20261205',type:'darkroom',date:'2026-12-05',start:'10:00',end:'14:00',capacity:4},
     {id:'club-20261212',type:'club',date:'2026-12-12',start:'09:00',end:'17:00',capacity:6},
