@@ -16,3 +16,4 @@ button.photo:focus-visible{outline-offset:-5px}.modal-close{min-width:44px;min-h
 td{overflow-wrap:anywhere}
 @media(max-width:760px){.grid{grid-template-columns:minmax(0,1fr)}footer nav{gap:0}footer nav a{min-height:44px;display:flex;align-items:center}.header-tools .icon-btn,.header-tools .lang-btn,.header-tools .menu-btn{min-width:44px}}
 .sr-only{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.article p .text-link{font-size:inherit;padding:0}.article .related p{font-size:16px;margin:0 0 8px}
