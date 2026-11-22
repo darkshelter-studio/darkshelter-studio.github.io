@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <base href="../">
+  <meta name="theme-color" content="#f1efe9">
+  <meta name="description" content="Small things worth knowing before you load the film, make a print or come up to the studio: darkroom printing, film formats, developing and looking after negatives.">
+  <meta property="og:title" content="Notes from the Darkroom: Analogue Photography Journal · DARKSHELTER">
+  <meta property="og:description" content="Small things worth knowing before you load the film, make a print or come up to the studio: darkroom printing, film formats, developing and looking after negatives.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_GB">
+  <meta property="og:image" content="https://darkshelter-studio.github.io/darkroom.webp">
+  <meta property="og:url" content="https://darkshelter-studio.github.io/journal/">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://darkshelter-studio.github.io/journal/">
+  <link rel="alternate" hreflang="en" href="https://darkshelter-studio.github.io/journal/">
+  <link rel="alternate" hreflang="el" href="https://darkshelter-studio.github.io/el/journal/">
+  <link rel="alternate" hreflang="x-default" href="https://darkshelter-studio.github.io/journal/">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;1,6..72,300&family=Hanken+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+  <link id="studio-styles" rel="stylesheet" href="styles.css?v=8f01769c5d4a">
+  <title>Notes from the Darkroom: Analogue Photography Journal · DARKSHELTER</title>
+  <script type="module">
+    // Resolve the latest asset versions on every page load. No background polling.
+    const fallback = {"version": "665b3c86560a", "assets": {"styles.css": "styles.css?v=8f01769c5d4a", "studio-config.js": "studio-config.js?v=ecc0309ee556", "app.js": "app.js?v=9579db4f704c"}};
+    const manifestUrl = new URL('version.json', document.baseURI);
+    manifestUrl.search = '';
+    manifestUrl.hash = '';
+    async function latest() {
+      const response = await fetch(manifestUrl, {cache: 'no-store'});
+      if (!response.ok) throw new Error('Version manifest unavailable');
+      const value = await response.json();
+      if (!value.version || !value.assets) throw new Error('Invalid version manifest');
+      for (const key of ['styles.css', 'studio-config.js', 'app.js']) {
+        const url = new URL(value.assets[key], manifestUrl);
+        if (url.origin !== location.origin || url.pathname !== new URL(key, manifestUrl).pathname) throw new Error('Invalid asset URL');
+      }
+      return value;
+    }
+    let current;
+    try { current = await latest(); } catch { current = fallback; }
+    document.getElementById('studio-styles').href = current.assets['styles.css'];
+    for (const name of ['studio-config.js', 'app.js']) {
+      await new Promise((resolve, reject) => {
+        const script = document.createElement('script');
+        script.src = current.assets[name];
+        script.onload = resolve;
+        script.onerror = reject;
+        document.head.appendChild(script);
+      });
+    }
+    let lastCheck = Date.now();
+    let checking = false;
+    async function checkForUpdate(force = false) {
+      if (document.hidden || checking || (!force && Date.now() - lastCheck < 15000)) return;
+      checking = true;
+      lastCheck = Date.now();
+      try {
+        const next = await latest();
+        if (next.version !== current.version) {
+          const url = new URL(location.href);
+          url.searchParams.set('v', next.version);
+          location.replace(url.href);
+        }
+      } catch {} finally { checking = false; }
+    }
+    addEventListener('focus', () => checkForUpdate());
+    addEventListener('visibilitychange', () => checkForUpdate());
+    addEventListener('pageshow', event => { if (event.persisted) checkForUpdate(true); });
+    addEventListener('online', () => checkForUpdate(true));
+  </script>
+</head>
+<body>
+  <a class="skip" href="#main-content">Skip to content</a>
+  <div id="preview-banner" class="preview-banner"></div>
+  <header id="header"></header>
+  <main id="main-content" tabindex="-1"><div class="page-head"><div class="wrap"><p class="eyebrow">Journal</p><h1 class="fade-in">Notes from the darkroom.</h1><p class="lead">Small things worth knowing before you load the film, make a print or come up to the studio.</p></div></div><section class="section"><div class="wrap grid"><article class="c4"><button type="button" class="photo " style="aspect-ratio:4/5;width:100%;padding:0;border:0" data-photo="darkroom" aria-label="View photograph: Developer trays, a darkroom timer and a black-and-white print under red safelight."><img src="darkroom.webp" srcset="darkroom-small.webp 720w, darkroom.webp 1536w" sizes="(max-width:760px) 140vw, 85vw" width="1536" height="1024" style="object-position:50% 88%;transform:scale(1.5);transform-origin:50% 88%" alt="Developer trays, a darkroom timer and a black-and-white print under red safelight." loading="eager" decoding="async" fetchpriority="high"></button><a class="journal-item" href="journal/what-is-a-test-strip/"><p class="eyebrow space-top">DARKROOM NOTES</p><h3>What Is a Test Strip, and Why Do We Make One?</h3><p class="meta">A small piece of paper that helps us find the right exposure before making a print.</p><span class="text-link">Read the note</span></a></article><article class="c4"><button type="button" class="photo " style="aspect-ratio:4/5;width:100%;padding:0;border:0" data-photo="workshop" aria-label="View photograph: A small group gathered around a photographic enlarger in a stone-walled darkroom."><img src="workshop.webp" srcset="workshop-small.webp 720w, workshop.webp 1536w" sizes="(max-width:760px) 140vw, 85vw" width="1536" height="1024" style="object-position:50% 50%;" alt="A small group gathered around a photographic enlarger in a stone-walled darkroom." loading="lazy" decoding="async" ></button><a class="journal-item" href="journal/your-first-darkroom-workshop/"><p class="eyebrow space-top">BEFORE YOU VISIT</p><h3>Your First Darkroom Workshop</h3><p class="meta">What to bring and what happens when the safelight comes on.</p><span class="text-link">Read the note</span></a></article><article class="c4"><button type="button" class="photo " style="aspect-ratio:4/5;width:100%;padding:0;border:0" data-photo="cameras" aria-label="View photograph: A 35mm SLR, a twin-lens medium-format camera and a rangefinder on a wooden surface, with film canisters beside them."><img src="cameras.webp" srcset="cameras-small.webp 720w, cameras.webp 1536w" sizes="(max-width:760px) 140vw, 85vw" width="1536" height="1024" style="object-position:50% 50%;" alt="A 35mm SLR, a twin-lens medium-format camera and a rangefinder on a wooden surface, with film canisters beside them." loading="lazy" decoding="async" ></button><a class="journal-item" href="journal/35mm-medium-format-large-format/"><p class="eyebrow space-top">FILM NOTES</p><h3>Choose Your Film Format, Then Slow Down</h3><p class="meta">35mm, medium format or large format: three different ways of making a photograph.</p><span class="text-link">Read the note</span></a></article><article class="c4"><button type="button" class="photo " style="aspect-ratio:4/5;width:100%;padding:0;border:0" data-photo="darkroom" aria-label="View photograph: Strips of film hanging from clips to dry in a red-lit darkroom."><img src="darkroom.webp" srcset="darkroom-small.webp 720w, darkroom.webp 1536w" sizes="(max-width:760px) 140vw, 85vw" width="1536" height="1024" style="object-position:52% 14%;transform:scale(2.4);transform-origin:52% 14%" alt="Strips of film hanging from clips to dry in a red-lit darkroom." loading="lazy" decoding="async" ></button><a class="journal-item" href="journal/what-happens-when-film-is-developed/"><p class="eyebrow space-top">FILM NOTES</p><h3>What Happens to Your Film After You Finish Shooting?</h3><p class="meta">From the camera to the negatives: a little look at what happens when your film comes to the studio.</p><span class="text-link">Read the note</span></a></article><article class="c4"><button type="button" class="photo " style="aspect-ratio:4/5;width:100%;padding:0;border:0" data-photo="darkroom" aria-label="View photograph: A photographic enlarger and its baseboard in a red-lit darkroom."><img src="darkroom.webp" srcset="darkroom-small.webp 720w, darkroom.webp 1536w" sizes="(max-width:760px) 140vw, 85vw" width="1536" height="1024" style="object-position:92% 35%;transform:scale(1.9);transform-origin:92% 35%" alt="A photographic enlarger and its baseboard in a red-lit darkroom." loading="lazy" decoding="async" ></button><a class="journal-item" href="journal/from-negative-to-darkroom-print/"><p class="eyebrow space-top">DARKROOM NOTES</p><h3>From Negative to Photograph</h3><p class="meta">How an image on a small piece of film becomes something you can hold in your hands.</p><span class="text-link">Read the note</span></a></article><article class="c4"><button type="button" class="photo " style="aspect-ratio:4/5;width:100%;padding:0;border:0" data-photo="cameras" aria-label="View photograph: Two black 35mm film canisters and an open cardboard film box on a wooden surface."><img src="cameras.webp" srcset="cameras-small.webp 720w, cameras.webp 1536w" sizes="(max-width:760px) 140vw, 85vw" width="1536" height="1024" style="object-position:66% 84%;transform:scale(2);transform-origin:66% 84%" alt="Two black 35mm film canisters and an open cardboard film box on a wooden surface." loading="lazy" decoding="async" ></button><a class="journal-item" href="journal/choosing-your-first-roll-of-film/"><p class="eyebrow space-top">FILM NOTES</p><h3>Choosing Your First Roll of Film</h3><p class="meta">Before you buy a roll, a few things worth knowing about film speed, colour and light.</p><span class="text-link">Read the note</span></a></article><article class="c4"><button type="button" class="photo " style="aspect-ratio:4/5;width:100%;padding:0;border:0" data-photo="village" aria-label="View photograph: Soft daylight and shadow on a stone building with wooden shutters and an open door."><img src="village.webp" srcset="village-small.webp 720w, village.webp 1536w" sizes="(max-width:760px) 140vw, 85vw" width="1536" height="1024" style="object-position:50% 50%;" alt="Soft daylight and shadow on a stone building with wooden shutters and an open door." loading="lazy" decoding="async" ></button><a class="journal-item" href="journal/learning-to-see-the-light/"><p class="eyebrow space-top">PHOTOGRAPHY NOTES</p><h3>Learning to See the Light</h3><p class="meta">Before thinking about cameras and settings, start by noticing the light around you.</p><span class="text-link">Read the note</span></a></article><article class="c4"><button type="button" class="photo " style="aspect-ratio:4/5;width:100%;padding:0;border:0" data-photo="large" aria-label="View photograph: A wooden large-format camera on a tripod beside a smaller box camera."><img src="photo-large.webp" srcset="photo-large-small.webp 720w, photo-large.webp 1400w" sizes="(max-width:760px) 140vw, 85vw" width="1400" height="931" style="object-position:50% 50%;" alt="A wooden large-format camera on a tripod beside a smaller box camera." loading="lazy" decoding="async" ></button><a class="journal-item" href="journal/how-to-store-film-negatives/"><p class="eyebrow space-top">FILM NOTES</p><h3>Looking After Your Film Negatives</h3><p class="meta">The photographs may be printed, but the negatives are worth keeping.</p><span class="text-link">Read the note</span></a></article></div></section></main>
+  <footer id="footer"></footer>
+  <dialog id="modal" aria-labelledby="modal-title"><button type="button" class="icon-btn modal-close" data-close aria-label="Close">×</button><div id="modal-content"></div></dialog>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

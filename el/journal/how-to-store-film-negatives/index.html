@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="el">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <base href="../../../">
+  <meta name="theme-color" content="#f1efe9">
+  <meta name="description" content="Πώς να χειρίζεσαι, να αποθηκεύεις και να σημειώνεις τα εμφανισμένα αρνητικά: αρχειακές θήκες, δροσερό στεγνό μέρος και γιατί αξίζει να κρατάς το πρωτότυπο.">
+  <meta property="og:title" content="Πώς να αποθηκεύεις τα αρνητικά φιλμ · DARKSHELTER">
+  <meta property="og:description" content="Πώς να χειρίζεσαι, να αποθηκεύεις και να σημειώνεις τα εμφανισμένα αρνητικά: αρχειακές θήκες, δροσερό στεγνό μέρος και γιατί αξίζει να κρατάς το πρωτότυπο.">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="el_GR">
+  <meta property="og:image" content="https://darkshelter-studio.github.io/photo-large.webp">
+  <meta property="og:url" content="https://darkshelter-studio.github.io/el/journal/how-to-store-film-negatives/">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://darkshelter-studio.github.io/el/journal/how-to-store-film-negatives/">
+  <link rel="alternate" hreflang="en" href="https://darkshelter-studio.github.io/journal/how-to-store-film-negatives/">
+  <link rel="alternate" hreflang="el" href="https://darkshelter-studio.github.io/el/journal/how-to-store-film-negatives/">
+  <link rel="alternate" hreflang="x-default" href="https://darkshelter-studio.github.io/journal/how-to-store-film-negatives/">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;1,6..72,300&family=Hanken+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+  <link id="studio-styles" rel="stylesheet" href="styles.css?v=8f01769c5d4a">
+  <title>Πώς να αποθηκεύεις τα αρνητικά φιλμ · DARKSHELTER</title>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Φροντίζοντας τα αρνητικά σου","description":"Πώς να χειρίζεσαι, να αποθηκεύεις και να σημειώνεις τα εμφανισμένα αρνητικά: αρχειακές θήκες, δροσερό στεγνό μέρος και γιατί αξίζει να κρατάς το πρωτότυπο.","inLanguage":"el","image":["https://darkshelter-studio.github.io/photo-large.webp"],"mainEntityOfPage":{"@type":"WebPage","@id":"https://darkshelter-studio.github.io/el/journal/how-to-store-film-negatives/"},"author":{"@type":"Organization","name":"DARKSHELTER"},"publisher":{"@type":"Organization","name":"DARKSHELTER"}}</script>
+  <script type="module">
+    // Resolve the latest asset versions on every page load. No background polling.
+    const fallback = {"version": "665b3c86560a", "assets": {"styles.css": "styles.css?v=8f01769c5d4a", "studio-config.js": "studio-config.js?v=ecc0309ee556", "app.js": "app.js?v=9579db4f704c"}};
+    const manifestUrl = new URL('version.json', document.baseURI);
+    manifestUrl.search = '';
+    manifestUrl.hash = '';
+    async function latest() {
+      const response = await fetch(manifestUrl, {cache: 'no-store'});
+      if (!response.ok) throw new Error('Version manifest unavailable');
+      const value = await response.json();
+      if (!value.version || !value.assets) throw new Error('Invalid version manifest');
+      for (const key of ['styles.css', 'studio-config.js', 'app.js']) {
+        const url = new URL(value.assets[key], manifestUrl);
+        if (url.origin !== location.origin || url.pathname !== new URL(key, manifestUrl).pathname) throw new Error('Invalid asset URL');
+      }
+      return value;
+    }
+    let current;
+    try { current = await latest(); } catch { current = fallback; }
+    document.getElementById('studio-styles').href = current.assets['styles.css'];
+    for (const name of ['studio-config.js', 'app.js']) {
+      await new Promise((resolve, reject) => {
+        const script = document.createElement('script');
+        script.src = current.assets[name];
+        script.onload = resolve;
+        script.onerror = reject;
+        document.head.appendChild(script);
+      });
+    }
+    let lastCheck = Date.now();
+    let checking = false;
+    async function checkForUpdate(force = false) {
+      if (document.hidden || checking || (!force && Date.now() - lastCheck < 15000)) return;
+      checking = true;
+      lastCheck = Date.now();
+      try {
+        const next = await latest();
+        if (next.version !== current.version) {
+          const url = new URL(location.href);
+          url.searchParams.set('v', next.version);
+          location.replace(url.href);
+        }
+      } catch {} finally { checking = false; }
+    }
+    addEventListener('focus', () => checkForUpdate());
+    addEventListener('visibilitychange', () => checkForUpdate());
+    addEventListener('pageshow', event => { if (event.persisted) checkForUpdate(true); });
+    addEventListener('online', () => checkForUpdate(true));
+  </script>
+</head>
+<body>
+  <a class="skip" href="#main-content">Skip to content</a>
+  <div id="preview-banner" class="preview-banner"></div>
+  <header id="header"></header>
+  <main id="main-content" tabindex="-1"><div class="page-head"><div class="article"><a class="text-link" href="el/journal/">Πίσω στις σημειώσεις</a><p class="eyebrow space-top">ΣΗΜΕΙΩΣΕΙΣ ΓΙΑ ΤΟ ΦΙΛΜ</p><h1>Φροντίζοντας τα αρνητικά σου</h1><p class="lead">Οι φωτογραφίες μπορεί να έχουν εκτυπωθεί, αλλά τα αρνητικά αξίζει να τα κρατήσεις.</p></div></div><article class="article"><button type="button" class="photo " style="aspect-ratio:3/2;width:100%;padding:0;border:0" data-photo="large" aria-label="Προβολή φωτογραφίας: Μια ξύλινη μηχανή μεγάλου φορμά σε τρίποδο δίπλα σε μια μικρότερη μηχανή κουτί."><img src="photo-large.webp" srcset="photo-large-small.webp 720w, photo-large.webp 1400w" sizes="(max-width:760px) 140vw, 85vw" width="1400" height="931" style="object-position:50% 50%;" alt="Μια ξύλινη μηχανή μεγάλου φορμά σε τρίποδο δίπλα σε μια μικρότερη μηχανή κουτί." loading="eager" decoding="async" fetchpriority="high"></button><div class="space-top"><p>Όταν ένα ρολό φιλμ έχει εμφανιστεί, έχεις στα χέρια σου κάτι που αξίζει να φροντίσεις. Τα αρνητικά περιέχουν τις πρωτότυπες εικόνες που κατέγραψε η μηχανή σου και μπορούν να χρησιμοποιηθούν για νέες εκτυπώσεις ή σκαναρίσματα όποτε τα χρειαστείς.</p><p>Το φιλμ είναι ευαίσθητο, ιδιαίτερα μετά την εμφάνιση. Η σκόνη, τα δαχτυλικά αποτυπώματα και οι γρατζουνιές μπορούν να επηρεάσουν την εικόνα, γι’ αυτό είναι καλύτερα να πιάνεις τα αρνητικά από τις άκρες και όχι από την επιφάνεια.</p><p>Για την αποθήκευση, χρησιμοποίησε θήκες αρνητικών αρχειακής ποιότητας, σχεδιασμένες για φωτογραφικό φιλμ. Προστατεύουν τις λωρίδες από τη σκόνη και τον άσκοπο χειρισμό. Φύλαξέ τες σε δροσερό, στεγνό μέρος, μακριά από άμεσο ηλιακό φως και από απότομες αλλαγές θερμοκρασίας και υγρασίας.</p><p>Αξίζει επίσης να σημειώνεις πάνω σε κάθε ρολό. Μια απλή σημείωση με την ημερομηνία, τη μηχανή και το είδος του φιλμ κάνει μεγάλη διαφορά όταν αργότερα ψάχνεις μια συγκεκριμένη φωτογραφία.</p><p>Ακόμα κι αν έχεις ήδη σκανάρει τα αγαπημένα σου καρέ ή έχεις κάνει εκτυπώσεις, μην πετάξεις τα αρνητικά. Είναι το πρωτότυπο υλικό και μπορεί να θελήσεις να επιστρέψεις σε αυτά ύστερα από χρόνια.</p><p>Μια φωτογραφία μπορεί να εκτυπωθεί περισσότερες από μία φορές, αλλά όταν φροντίζεις το αρνητικό κρατάς ασφαλή την αρχική εικόνα.</p></div><div class="space-top related"><p class="eyebrow">ΣΧΕΤΙΚΕΣ ΣΗΜΕΙΩΣΕΙΣ</p><p><a class="text-link" href="el/journal/what-happens-when-film-is-developed/">Τι γίνεται με το φιλμ μετά το τελευταίο καρέ;</a></p><p><a class="text-link" href="el/journal/from-negative-to-darkroom-print/">Από το αρνητικό στη φωτογραφία</a></p></div><div class="space-top space-bottom"><div class="actions"><a class="btn outline" href="el/journal/">Πίσω στις σημειώσεις</a></div></div></article></main>
+  <footer id="footer"></footer>
+  <dialog id="modal" aria-labelledby="modal-title"><button type="button" class="icon-btn modal-close" data-close aria-label="Close">×</button><div id="modal-content"></div></dialog>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

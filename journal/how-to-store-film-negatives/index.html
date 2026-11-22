@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <base href="../../">
+  <meta name="theme-color" content="#f1efe9">
+  <meta name="description" content="How to handle, store and label developed film negatives: archival sleeves, cool dry places and why the original negative is worth keeping.">
+  <meta property="og:title" content="How to Store Film Negatives · DARKSHELTER">
+  <meta property="og:description" content="How to handle, store and label developed film negatives: archival sleeves, cool dry places and why the original negative is worth keeping.">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="en_GB">
+  <meta property="og:image" content="https://darkshelter-studio.github.io/photo-large.webp">
+  <meta property="og:url" content="https://darkshelter-studio.github.io/journal/how-to-store-film-negatives/">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://darkshelter-studio.github.io/journal/how-to-store-film-negatives/">
+  <link rel="alternate" hreflang="en" href="https://darkshelter-studio.github.io/journal/how-to-store-film-negatives/">
+  <link rel="alternate" hreflang="el" href="https://darkshelter-studio.github.io/el/journal/how-to-store-film-negatives/">
+  <link rel="alternate" hreflang="x-default" href="https://darkshelter-studio.github.io/journal/how-to-store-film-negatives/">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;1,6..72,300&family=Hanken+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+  <link id="studio-styles" rel="stylesheet" href="styles.css?v=8f01769c5d4a">
+  <title>How to Store Film Negatives · DARKSHELTER</title>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Looking After Your Film Negatives","description":"How to handle, store and label developed film negatives: archival sleeves, cool dry places and why the original negative is worth keeping.","inLanguage":"en","image":["https://darkshelter-studio.github.io/photo-large.webp"],"mainEntityOfPage":{"@type":"WebPage","@id":"https://darkshelter-studio.github.io/journal/how-to-store-film-negatives/"},"author":{"@type":"Organization","name":"DARKSHELTER"},"publisher":{"@type":"Organization","name":"DARKSHELTER"}}</script>
+  <script type="module">
+    // Resolve the latest asset versions on every page load. No background polling.
+    const fallback = {"version": "665b3c86560a", "assets": {"styles.css": "styles.css?v=8f01769c5d4a", "studio-config.js": "studio-config.js?v=ecc0309ee556", "app.js": "app.js?v=9579db4f704c"}};
+    const manifestUrl = new URL('version.json', document.baseURI);
+    manifestUrl.search = '';
+    manifestUrl.hash = '';
+    async function latest() {
+      const response = await fetch(manifestUrl, {cache: 'no-store'});
+      if (!response.ok) throw new Error('Version manifest unavailable');
+      const value = await response.json();
+      if (!value.version || !value.assets) throw new Error('Invalid version manifest');
+      for (const key of ['styles.css', 'studio-config.js', 'app.js']) {
+        const url = new URL(value.assets[key], manifestUrl);
+        if (url.origin !== location.origin || url.pathname !== new URL(key, manifestUrl).pathname) throw new Error('Invalid asset URL');
+      }
+      return value;
+    }
+    let current;
+    try { current = await latest(); } catch { current = fallback; }
+    document.getElementById('studio-styles').href = current.assets['styles.css'];
+    for (const name of ['studio-config.js', 'app.js']) {
+      await new Promise((resolve, reject) => {
+        const script = document.createElement('script');
+        script.src = current.assets[name];
+        script.onload = resolve;
+        script.onerror = reject;
+        document.head.appendChild(script);
+      });
+    }
+    let lastCheck = Date.now();
+    let checking = false;
+    async function checkForUpdate(force = false) {
+      if (document.hidden || checking || (!force && Date.now() - lastCheck < 15000)) return;
+      checking = true;
+      lastCheck = Date.now();
+      try {
+        const next = await latest();
+        if (next.version !== current.version) {
+          const url = new URL(location.href);
+          url.searchParams.set('v', next.version);
+          location.replace(url.href);
+        }
+      } catch {} finally { checking = false; }
+    }
+    addEventListener('focus', () => checkForUpdate());
+    addEventListener('visibilitychange', () => checkForUpdate());
+    addEventListener('pageshow', event => { if (event.persisted) checkForUpdate(true); });
+    addEventListener('online', () => checkForUpdate(true));
+  </script>
+</head>
+<body>
+  <a class="skip" href="#main-content">Skip to content</a>
+  <div id="preview-banner" class="preview-banner"></div>
+  <header id="header"></header>
+  <main id="main-content" tabindex="-1"><div class="page-head"><div class="article"><a class="text-link" href="journal/">Back to journal</a><p class="eyebrow space-top">FILM NOTES</p><h1>Looking After Your Film Negatives</h1><p class="lead">The photographs may be printed, but the negatives are worth keeping.</p></div></div><article class="article"><button type="button" class="photo " style="aspect-ratio:3/2;width:100%;padding:0;border:0" data-photo="large" aria-label="View photograph: A wooden large-format camera on a tripod beside a smaller box camera."><img src="photo-large.webp" srcset="photo-large-small.webp 720w, photo-large.webp 1400w" sizes="(max-width:760px) 140vw, 85vw" width="1400" height="931" style="object-position:50% 50%;" alt="A wooden large-format camera on a tripod beside a smaller box camera." loading="eager" decoding="async" fetchpriority="high"></button><div class="space-top"><p>Once a roll of film has been developed, you have something worth looking after. The negatives contain the original images recorded by your camera, and they can be used to make new prints or scans whenever you need them.</p><p>Film is delicate, particularly once it has been developed. Dust, fingerprints and scratches can affect the image, so it’s best to handle negatives by their edges rather than touching the surface.</p><p>For storage, use archival-quality negative sleeves designed for photographic film. They help protect the strips from dust and unnecessary handling. Keep them somewhere cool, dry and away from direct sunlight or sudden changes in temperature and humidity.</p><p>It’s also worth labelling each roll. A simple note with the date, camera and type of film can make a big difference when you’re looking for a particular photograph later.</p><p>Even if you’ve already scanned your favourite frames or made prints, don’t throw the negatives away. They are the original material, and you may want to return to them years from now.</p><p>A photograph can be printed more than once, but looking after the negative means keeping the original image safe.</p></div><div class="space-top related"><p class="eyebrow">RELATED NOTES</p><p><a class="text-link" href="journal/what-happens-when-film-is-developed/">What Happens to Your Film After You Finish Shooting?</a></p><p><a class="text-link" href="journal/from-negative-to-darkroom-print/">From Negative to Photograph</a></p></div><div class="space-top space-bottom"><div class="actions"><a class="btn outline" href="journal/">Back to journal</a></div></div></article></main>
+  <footer id="footer"></footer>
+  <dialog id="modal" aria-labelledby="modal-title"><button type="button" class="icon-btn modal-close" data-close aria-label="Close">×</button><div id="modal-content"></div></dialog>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

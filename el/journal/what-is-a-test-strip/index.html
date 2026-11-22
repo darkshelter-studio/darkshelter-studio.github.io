@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="el">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <base href="../../../">
+  <meta name="theme-color" content="#f1efe9">
+  <meta name="description" content="Τι είναι η δοκιμαστική λωρίδα, γιατί τη φτιάχνουμε πριν από την εκτύπωση και πώς μας βοηθά να βρούμε τον σωστό χρόνο έκθεσης.">
+  <meta property="og:title" content="Τι είναι η δοκιμαστική λωρίδα στον σκοτεινό θάλαμο · DARKSHELTER">
+  <meta property="og:description" content="Τι είναι η δοκιμαστική λωρίδα, γιατί τη φτιάχνουμε πριν από την εκτύπωση και πώς μας βοηθά να βρούμε τον σωστό χρόνο έκθεσης.">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="el_GR">
+  <meta property="og:image" content="https://darkshelter-studio.github.io/darkroom.webp">
+  <meta property="og:url" content="https://darkshelter-studio.github.io/el/journal/what-is-a-test-strip/">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://darkshelter-studio.github.io/el/journal/what-is-a-test-strip/">
+  <link rel="alternate" hreflang="en" href="https://darkshelter-studio.github.io/journal/what-is-a-test-strip/">
+  <link rel="alternate" hreflang="el" href="https://darkshelter-studio.github.io/el/journal/what-is-a-test-strip/">
+  <link rel="alternate" hreflang="x-default" href="https://darkshelter-studio.github.io/journal/what-is-a-test-strip/">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;1,6..72,300&family=Hanken+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+  <link id="studio-styles" rel="stylesheet" href="styles.css?v=8f01769c5d4a">
+  <title>Τι είναι η δοκιμαστική λωρίδα στον σκοτεινό θάλαμο · DARKSHELTER</title>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Τι είναι η δοκιμαστική λωρίδα και γιατί τη φτιάχνουμε;","description":"Τι είναι η δοκιμαστική λωρίδα, γιατί τη φτιάχνουμε πριν από την εκτύπωση και πώς μας βοηθά να βρούμε τον σωστό χρόνο έκθεσης.","inLanguage":"el","image":["https://darkshelter-studio.github.io/darkroom.webp"],"mainEntityOfPage":{"@type":"WebPage","@id":"https://darkshelter-studio.github.io/el/journal/what-is-a-test-strip/"},"author":{"@type":"Organization","name":"DARKSHELTER"},"publisher":{"@type":"Organization","name":"DARKSHELTER"}}</script>
+  <script type="module">
+    // Resolve the latest asset versions on every page load. No background polling.
+    const fallback = {"version": "665b3c86560a", "assets": {"styles.css": "styles.css?v=8f01769c5d4a", "studio-config.js": "studio-config.js?v=ecc0309ee556", "app.js": "app.js?v=9579db4f704c"}};
+    const manifestUrl = new URL('version.json', document.baseURI);
+    manifestUrl.search = '';
+    manifestUrl.hash = '';
+    async function latest() {
+      const response = await fetch(manifestUrl, {cache: 'no-store'});
+      if (!response.ok) throw new Error('Version manifest unavailable');
+      const value = await response.json();
+      if (!value.version || !value.assets) throw new Error('Invalid version manifest');
+      for (const key of ['styles.css', 'studio-config.js', 'app.js']) {
+        const url = new URL(value.assets[key], manifestUrl);
+        if (url.origin !== location.origin || url.pathname !== new URL(key, manifestUrl).pathname) throw new Error('Invalid asset URL');
+      }
+      return value;
+    }
+    let current;
+    try { current = await latest(); } catch { current = fallback; }
+    document.getElementById('studio-styles').href = current.assets['styles.css'];
+    for (const name of ['studio-config.js', 'app.js']) {
+      await new Promise((resolve, reject) => {
+        const script = document.createElement('script');
+        script.src = current.assets[name];
+        script.onload = resolve;
+        script.onerror = reject;
+        document.head.appendChild(script);
+      });
+    }
+    let lastCheck = Date.now();
+    let checking = false;
+    async function checkForUpdate(force = false) {
+      if (document.hidden || checking || (!force && Date.now() - lastCheck < 15000)) return;
+      checking = true;
+      lastCheck = Date.now();
+      try {
+        const next = await latest();
+        if (next.version !== current.version) {
+          const url = new URL(location.href);
+          url.searchParams.set('v', next.version);
+          location.replace(url.href);
+        }
+      } catch {} finally { checking = false; }
+    }
+    addEventListener('focus', () => checkForUpdate());
+    addEventListener('visibilitychange', () => checkForUpdate());
+    addEventListener('pageshow', event => { if (event.persisted) checkForUpdate(true); });
+    addEventListener('online', () => checkForUpdate(true));
+  </script>
+</head>
+<body>
+  <a class="skip" href="#main-content">Skip to content</a>
+  <div id="preview-banner" class="preview-banner"></div>
+  <header id="header"></header>
+  <main id="main-content" tabindex="-1"><div class="page-head"><div class="article"><a class="text-link" href="el/journal/">Πίσω στις σημειώσεις</a><p class="eyebrow space-top">ΣΚΟΤΕΙΝΟΣ ΘΑΛΑΜΟΣ</p><h1>Τι είναι η δοκιμαστική λωρίδα και γιατί τη φτιάχνουμε;</h1><p class="lead">Ένα μικρό κομμάτι χαρτί που μας βοηθά να βρούμε τη σωστή έκθεση πριν από την εκτύπωση.</p></div></div><article class="article"><button type="button" class="photo color" style="aspect-ratio:3/2;width:100%;padding:0;border:0" data-photo="darkroom" aria-label="Προβολή φωτογραφίας: Λεκάνες εμφάνισης, ένα χρονόμετρο και μια ασπρόμαυρη εκτύπωση κάτω από κόκκινο φως."><img src="darkroom.webp" srcset="darkroom-small.webp 720w, darkroom.webp 1536w" sizes="(max-width:760px) 140vw, 85vw" width="1536" height="1024" style="object-position:50% 88%;transform:scale(1.5);transform-origin:50% 88%" alt="Λεκάνες εμφάνισης, ένα χρονόμετρο και μια ασπρόμαυρη εκτύπωση κάτω από κόκκινο φως." loading="eager" decoding="async" fetchpriority="high"></button><div class="space-top"><p>Όταν φτιάχνουμε μια φωτογραφία στον σκοτεινό θάλαμο, η εικόνα δεν εμφανίζεται απλώς στο χαρτί. Το φως περνά μέσα από το αρνητικό και πέφτει πάνω σε φωτοευαίσθητο φωτογραφικό χαρτί. Ο χρόνος που το χαρτί εκτίθεται σε αυτό το φως καθορίζει πόσο σκούρα ή πόσο ανοιχτή θα είναι η τελική φωτογραφία.</p><p>Πριν από την πλήρη εκτύπωση, ξεκινάμε με ένα μικρό κομμάτι φωτογραφικού χαρτιού, τη δοκιμαστική λωρίδα.</p><p>Καλύπτουμε κάποια τμήματα του χαρτιού κατά την έκθεση, ώστε κάθε τμήμα να δεχτεί διαφορετική ποσότητα φωτός. Μόλις το χαρτί εμφανιστεί, τα τμήματα αυτά μας δείχνουν πώς φαίνεται η φωτογραφία με διαφορετικούς χρόνους έκθεσης.</p><p>Συγκρίνοντάς τα, αποφασίζουμε πόσο χρόνο θα εκθέσουμε ολόκληρο το φύλλο για να πάρουμε το αποτέλεσμα που θέλουμε.</p><p>Είναι από τα πρώτα πράγματα που μαθαίνει κανείς στην εκτύπωση στον σκοτεινό θάλαμο και βασικό μέρος για να καταλάβεις πώς φτιάχνεται μια φωτογραφία με το χέρι.</p><p>Στο workshop θα φτιάξεις τη δική σου δοκιμαστική λωρίδα, θα δεις την εικόνα να εμφανίζεται μέσα στον εμφανιστή και θα διαλέξεις τον χρόνο έκθεσης για την τελική σου εκτύπωση.</p><p>Διάβασε περισσότερα για το <a class="text-link" href="#darkroom">workshop στον σκοτεινό θάλαμο</a>.</p></div><div class="space-top related"><p class="eyebrow">ΣΧΕΤΙΚΕΣ ΣΗΜΕΙΩΣΕΙΣ</p><p><a class="text-link" href="el/journal/from-negative-to-darkroom-print/">Από το αρνητικό στη φωτογραφία</a></p><p><a class="text-link" href="el/journal/your-first-darkroom-workshop/">Το πρώτο σου workshop στον σκοτεινό θάλαμο</a></p></div><div class="space-top space-bottom"><div class="actions"><a class="btn outline" href="el/journal/">Πίσω στις σημειώσεις</a></div></div></article></main>
+  <footer id="footer"></footer>
+  <dialog id="modal" aria-labelledby="modal-title"><button type="button" class="icon-btn modal-close" data-close aria-label="Close">×</button><div id="modal-content"></div></dialog>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

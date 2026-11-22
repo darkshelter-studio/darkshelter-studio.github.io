@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="el">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <base href="../../">
+  <meta name="theme-color" content="#f1efe9">
+  <meta name="description" content="Μερικά χρήσιμα πράγματα πριν φορτώσεις φιλμ, φτιάξεις μια εκτύπωση ή ανέβεις στο studio: εκτύπωση στον σκοτεινό θάλαμο, φορμά φιλμ, εμφάνιση και φύλαξη αρνητικών.">
+  <meta property="og:title" content="Σημειώσεις από τον σκοτεινό θάλαμο: αναλογική φωτογραφία · DARKSHELTER">
+  <meta property="og:description" content="Μερικά χρήσιμα πράγματα πριν φορτώσεις φιλμ, φτιάξεις μια εκτύπωση ή ανέβεις στο studio: εκτύπωση στον σκοτεινό θάλαμο, φορμά φιλμ, εμφάνιση και φύλαξη αρνητικών.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="el_GR">
+  <meta property="og:image" content="https://darkshelter-studio.github.io/darkroom.webp">
+  <meta property="og:url" content="https://darkshelter-studio.github.io/el/journal/">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://darkshelter-studio.github.io/el/journal/">
+  <link rel="alternate" hreflang="en" href="https://darkshelter-studio.github.io/journal/">
+  <link rel="alternate" hreflang="el" href="https://darkshelter-studio.github.io/el/journal/">
+  <link rel="alternate" hreflang="x-default" href="https://darkshelter-studio.github.io/journal/">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;1,6..72,300&family=Hanken+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+  <link id="studio-styles" rel="stylesheet" href="styles.css?v=8f01769c5d4a">
+  <title>Σημειώσεις από τον σκοτεινό θάλαμο: αναλογική φωτογραφία · DARKSHELTER</title>
+  <script type="module">
+    // Resolve the latest asset versions on every page load. No background polling.
+    const fallback = {"version": "665b3c86560a", "assets": {"styles.css": "styles.css?v=8f01769c5d4a", "studio-config.js": "studio-config.js?v=ecc0309ee556", "app.js": "app.js?v=9579db4f704c"}};
+    const manifestUrl = new URL('version.json', document.baseURI);
+    manifestUrl.search = '';
+    manifestUrl.hash = '';
+    async function latest() {
+      const response = await fetch(manifestUrl, {cache: 'no-store'});
+      if (!response.ok) throw new Error('Version manifest unavailable');
+      const value = await response.json();
+      if (!value.version || !value.assets) throw new Error('Invalid version manifest');
+      for (const key of ['styles.css', 'studio-config.js', 'app.js']) {
+        const url = new URL(value.assets[key], manifestUrl);
+        if (url.origin !== location.origin || url.pathname !== new URL(key, manifestUrl).pathname) throw new Error('Invalid asset URL');
+      }
+      return value;
+    }
+    let current;
+    try { current = await latest(); } catch { current = fallback; }
+    document.getElementById('studio-styles').href = current.assets['styles.css'];
+    for (const name of ['studio-config.js', 'app.js']) {
+      await new Promise((resolve, reject) => {
+        const script = document.createElement('script');
+        script.src = current.assets[name];
+        script.onload = resolve;
+        script.onerror = reject;
+        document.head.appendChild(script);
+      });
+    }
+    let lastCheck = Date.now();
+    let checking = false;
+    async function checkForUpdate(force = false) {
+      if (document.hidden || checking || (!force && Date.now() - lastCheck < 15000)) return;
+      checking = true;
+      lastCheck = Date.now();
+      try {
+        const next = await latest();
+        if (next.version !== current.version) {
+          const url = new URL(location.href);
+          url.searchParams.set('v', next.version);
+          location.replace(url.href);
+        }
+      } catch {} finally { checking = false; }
+    }
+    addEventListener('focus', () => checkForUpdate());
+    addEventListener('visibilitychange', () => checkForUpdate());
+    addEventListener('pageshow', event => { if (event.persisted) checkForUpdate(true); });
+    addEventListener('online', () => checkForUpdate(true));
+  </script>
+</head>
+<body>
+  <a class="skip" href="#main-content">Skip to content</a>
+  <div id="preview-banner" class="preview-banner"></div>
+  <header id="header"></header>
+  <main id="main-content" tabindex="-1"><div class="page-head"><div class="wrap"><p class="eyebrow">Σημειώσεις</p><h1 class="fade-in">Σημειώσεις από τον σκοτεινό θάλαμο.</h1><p class="lead">Μερικά χρήσιμα πράγματα πριν φορτώσεις φιλμ, φτιάξεις μια εκτύπωση ή ανέβεις στο studio.</p></div></div><section class="section"><div class="wrap grid"><article class="c4"><button type="button" class="photo " style="aspect-ratio:4/5;width:100%;padding:0;border:0" data-photo="darkroom" aria-label="Προβολή φωτογραφίας: Λεκάνες εμφάνισης, ένα χρονόμετρο και μια ασπρόμαυρη εκτύπωση κάτω από κόκκινο φως."><img src="darkroom.webp" srcset="darkroom-small.webp 720w, darkroom.webp 1536w" sizes="(max-width:760px) 140vw, 85vw" width="1536" height="1024" style="object-position:50% 88%;transform:scale(1.5);transform-origin:50% 88%" alt="Λεκάνες εμφάνισης, ένα χρονόμετρο και μια ασπρόμαυρη εκτύπωση κάτω από κόκκινο φως." loading="eager" decoding="async" fetchpriority="high"></button><a class="journal-item" href="el/journal/what-is-a-test-strip/"><p class="eyebrow space-top">ΣΚΟΤΕΙΝΟΣ ΘΑΛΑΜΟΣ</p><h3>Τι είναι η δοκιμαστική λωρίδα και γιατί τη φτιάχνουμε;</h3><p class="meta">Ένα μικρό κομμάτι χαρτί που μας βοηθά να βρούμε τη σωστή έκθεση πριν από την εκτύπωση.</p><span class="text-link">Διάβασε τη σημείωση</span></a></article><article class="c4"><button type="button" class="photo " style="aspect-ratio:4/5;width:100%;padding:0;border:0" data-photo="workshop" aria-label="Προβολή φωτογραφίας: Μια μικρή ομάδα γύρω από έναν φωτογραφικό μεγεθυντή σε σκοτεινό θάλαμο με πέτρινους τοίχους."><img src="workshop.webp" srcset="workshop-small.webp 720w, workshop.webp 1536w" sizes="(max-width:760px) 140vw, 85vw" width="1536" height="1024" style="object-position:50% 50%;" alt="Μια μικρή ομάδα γύρω από έναν φωτογραφικό μεγεθυντή σε σκοτεινό θάλαμο με πέτρινους τοίχους." loading="lazy" decoding="async" ></button><a class="journal-item" href="el/journal/your-first-darkroom-workshop/"><p class="eyebrow space-top">ΠΡΙΝ ΤΗΝ ΕΠΙΣΚΕΨΗ</p><h3>Το πρώτο σου workshop στον σκοτεινό θάλαμο</h3><p class="meta">Τι να φέρεις και τι γίνεται όταν ανάψει το κόκκινο φως.</p><span class="text-link">Διάβασε τη σημείωση</span></a></article><article class="c4"><button type="button" class="photo " style="aspect-ratio:4/5;width:100%;padding:0;border:0" data-photo="cameras" aria-label="Προβολή φωτογραφίας: Μια μηχανή 35mm reflex, μια μηχανή μεσαίου φορμά με δύο φακούς και μια rangefinder πάνω σε ξύλινη επιφάνεια, με κασέτες φιλμ δίπλα."><img src="cameras.webp" srcset="cameras-small.webp 720w, cameras.webp 1536w" sizes="(max-width:760px) 140vw, 85vw" width="1536" height="1024" style="object-position:50% 50%;" alt="Μια μηχανή 35mm reflex, μια μηχανή μεσαίου φορμά με δύο φακούς και μια rangefinder πάνω σε ξύλινη επιφάνεια, με κασέτες φιλμ δίπλα." loading="lazy" decoding="async" ></button><a class="journal-item" href="el/journal/35mm-medium-format-large-format/"><p class="eyebrow space-top">ΣΗΜΕΙΩΣΕΙΣ ΓΙΑ ΤΟ ΦΙΛΜ</p><h3>Διάλεξε φορμά φιλμ και δώσε χρόνο στο κάδρο</h3><p class="meta">35mm, μεσαίο ή μεγάλο φορμά: τρεις διαφορετικοί τρόποι να φτιάξεις μια φωτογραφία.</p><span class="text-link">Διάβασε τη σημείωση</span></a></article><article class="c4"><button type="button" class="photo " style="aspect-ratio:4/5;width:100%;padding:0;border:0" data-photo="darkroom" aria-label="Προβολή φωτογραφίας: Λωρίδες φιλμ κρεμασμένες με μανταλάκια για να στεγνώσουν σε σκοτεινό θάλαμο με κόκκινο φως."><img src="darkroom.webp" srcset="darkroom-small.webp 720w, darkroom.webp 1536w" sizes="(max-width:760px) 140vw, 85vw" width="1536" height="1024" style="object-position:52% 14%;transform:scale(2.4);transform-origin:52% 14%" alt="Λωρίδες φιλμ κρεμασμένες με μανταλάκια για να στεγνώσουν σε σκοτεινό θάλαμο με κόκκινο φως." loading="lazy" decoding="async" ></button><a class="journal-item" href="el/journal/what-happens-when-film-is-developed/"><p class="eyebrow space-top">ΣΗΜΕΙΩΣΕΙΣ ΓΙΑ ΤΟ ΦΙΛΜ</p><h3>Τι γίνεται με το φιλμ μετά το τελευταίο καρέ;</h3><p class="meta">Από τη μηχανή στα αρνητικά: μια μικρή ματιά σε ό,τι συμβαίνει όταν το φιλμ σου φτάνει στο studio.</p><span class="text-link">Διάβασε τη σημείωση</span></a></article><article class="c4"><button type="button" class="photo " style="aspect-ratio:4/5;width:100%;padding:0;border:0" data-photo="darkroom" aria-label="Προβολή φωτογραφίας: Ένας φωτογραφικός μεγεθυντής και η βάση του σε σκοτεινό θάλαμο με κόκκινο φως."><img src="darkroom.webp" srcset="darkroom-small.webp 720w, darkroom.webp 1536w" sizes="(max-width:760px) 140vw, 85vw" width="1536" height="1024" style="object-position:92% 35%;transform:scale(1.9);transform-origin:92% 35%" alt="Ένας φωτογραφικός μεγεθυντής και η βάση του σε σκοτεινό θάλαμο με κόκκινο φως." loading="lazy" decoding="async" ></button><a class="journal-item" href="el/journal/from-negative-to-darkroom-print/"><p class="eyebrow space-top">ΣΚΟΤΕΙΝΟΣ ΘΑΛΑΜΟΣ</p><h3>Από το αρνητικό στη φωτογραφία</h3><p class="meta">Πώς μια εικόνα πάνω σε ένα μικρό κομμάτι φιλμ γίνεται κάτι που μπορείς να κρατήσεις στα χέρια σου.</p><span class="text-link">Διάβασε τη σημείωση</span></a></article><article class="c4"><button type="button" class="photo " style="aspect-ratio:4/5;width:100%;padding:0;border:0" data-photo="cameras" aria-label="Προβολή φωτογραφίας: Δύο μαύρες κασέτες φιλμ 35mm και ένα ανοιχτό χάρτινο κουτί φιλμ πάνω σε ξύλινη επιφάνεια."><img src="cameras.webp" srcset="cameras-small.webp 720w, cameras.webp 1536w" sizes="(max-width:760px) 140vw, 85vw" width="1536" height="1024" style="object-position:66% 84%;transform:scale(2);transform-origin:66% 84%" alt="Δύο μαύρες κασέτες φιλμ 35mm και ένα ανοιχτό χάρτινο κουτί φιλμ πάνω σε ξύλινη επιφάνεια." loading="lazy" decoding="async" ></button><a class="journal-item" href="el/journal/choosing-your-first-roll-of-film/"><p class="eyebrow space-top">ΣΗΜΕΙΩΣΕΙΣ ΓΙΑ ΤΟ ΦΙΛΜ</p><h3>Πώς να διαλέξεις το πρώτο σου ρολό φιλμ</h3><p class="meta">Πριν αγοράσεις ένα ρολό, μερικά πράγματα που αξίζει να ξέρεις για την ευαισθησία, το χρώμα και το φως.</p><span class="text-link">Διάβασε τη σημείωση</span></a></article><article class="c4"><button type="button" class="photo " style="aspect-ratio:4/5;width:100%;padding:0;border:0" data-photo="village" aria-label="Προβολή φωτογραφίας: Απαλό φως και σκιά σε πέτρινο κτίριο με ξύλινα παραθυρόφυλλα και ανοιχτή πόρτα."><img src="village.webp" srcset="village-small.webp 720w, village.webp 1536w" sizes="(max-width:760px) 140vw, 85vw" width="1536" height="1024" style="object-position:50% 50%;" alt="Απαλό φως και σκιά σε πέτρινο κτίριο με ξύλινα παραθυρόφυλλα και ανοιχτή πόρτα." loading="lazy" decoding="async" ></button><a class="journal-item" href="el/journal/learning-to-see-the-light/"><p class="eyebrow space-top">ΣΗΜΕΙΩΣΕΙΣ ΦΩΤΟΓΡΑΦΙΑΣ</p><h3>Μαθαίνοντας να βλέπεις το φως</h3><p class="meta">Πριν σκεφτείς μηχανές και ρυθμίσεις, ξεκίνα προσέχοντας το φως γύρω σου.</p><span class="text-link">Διάβασε τη σημείωση</span></a></article><article class="c4"><button type="button" class="photo " style="aspect-ratio:4/5;width:100%;padding:0;border:0" data-photo="large" aria-label="Προβολή φωτογραφίας: Μια ξύλινη μηχανή μεγάλου φορμά σε τρίποδο δίπλα σε μια μικρότερη μηχανή κουτί."><img src="photo-large.webp" srcset="photo-large-small.webp 720w, photo-large.webp 1400w" sizes="(max-width:760px) 140vw, 85vw" width="1400" height="931" style="object-position:50% 50%;" alt="Μια ξύλινη μηχανή μεγάλου φορμά σε τρίποδο δίπλα σε μια μικρότερη μηχανή κουτί." loading="lazy" decoding="async" ></button><a class="journal-item" href="el/journal/how-to-store-film-negatives/"><p class="eyebrow space-top">ΣΗΜΕΙΩΣΕΙΣ ΓΙΑ ΤΟ ΦΙΛΜ</p><h3>Φροντίζοντας τα αρνητικά σου</h3><p class="meta">Οι φωτογραφίες μπορεί να έχουν εκτυπωθεί, αλλά τα αρνητικά αξίζει να τα κρατήσεις.</p><span class="text-link">Διάβασε τη σημείωση</span></a></article></div></section></main>
+  <footer id="footer"></footer>
+  <dialog id="modal" aria-labelledby="modal-title"><button type="button" class="icon-btn modal-close" data-close aria-label="Close">×</button><div id="modal-content"></div></dialog>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

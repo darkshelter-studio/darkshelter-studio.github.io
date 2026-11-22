@@ -83,7 +83,7 @@ Secondary phrases, SEO titles and descriptions are in the `ARTICLES` data (`seo`
 
 **Images.** Only existing assets are used, cropped differently per article. They are illustrative proposal images and do not document the real studio. There is no dedicated image of film rolls, a developing tank, test strips or negatives in archival sleeves. Replace articles 1, 4, 5 and 8 first when real studio photographs are available.
 
-**Indexing limitation (hash URLs).** Search engines ignore the part of a URL after `#`, so `/#journal/<slug>` is one page for Google (the home page). Per-article titles and descriptions help browsers, sharing and any crawler that runs scripts, but they will not create separately indexed pages. A practical fix without a build system or new hosting: add one small static HTML file per article (`/journal/<slug>/index.html`, containing the article text, its own title, description and canonical URL, and a link into the app), a `sitemap.xml` listing them, and point the app's article links to those paths. A short Node script run by hand could generate them from the `ARTICLES` data so the content stays in one place. Not implemented here because it changes the site's URL structure.
+**Indexing:** see the next section; this limitation has since been addressed.
 
 **Verification (headless Chrome, 2026-11-22)**
 - 8 cards on the Journal page in EN and EL; 3-column grid on desktop, single column on mobile; no horizontal scroll at 1280, 820 and 390 px.
@@ -93,6 +93,42 @@ Secondary phrases, SEO titles and descriptions are in the `ARTICLES` data (`seo`
 - No console or page errors (the only network errors are Google Fonts requests blocked in the test sandbox).
 - Regression: home, Darkroom, Cameras, Club F/65, studio, The Analogue Shelf, booking, requests, contact, privacy and preview pages load; Analogue Shelf and navigation test suites still pass.
 - Not verified: real phones, and the live site (nothing deployed). Greek copy was written for naturalness but has not been reviewed by a native Greek editor.
+
+## Journal SEO: indexable article URLs
+
+Status: implemented and tested locally; **not published or deployed**.
+
+**What was wrong**
+- Every article lived at a hash URL (`/#journal/<id>`). Search engines drop everything after `#`, so all eight articles were one URL (the home page) to Google and could not be indexed or shown in results separately. Per-article titles and descriptions set by script on those URLs had no effect on indexing.
+- The live site had no `robots.txt` and no `sitemap.xml` (both returned 404 on 2026-11-22), and the Journal was only reachable through script-rendered hash links.
+- A `site:` web search for the domain returned nothing, which is consistent with the site not being indexed yet. That is not proof; only Google Search Console can confirm indexing status.
+
+**What changed**
+- `tools/generate-journal.mjs` (new, plain Node, no dependencies, run by hand) reads `ARTICLES` and `JOURNAL_SEO` from `app.js` and the page shell from `index.html`, and writes:
+  - `journal/<slug>/index.html` and `el/journal/<slug>/index.html` for each of the 8 articles (16 pages), plus a hub page per language at `journal/` and `el/journal/` (18 pages in total);
+  - `sitemap.xml` (19 URLs: home, 2 hubs, 16 articles, each with hreflang alternates);
+  - `robots.txt` (allow all, points to the sitemap).
+- Each page has: `<html lang>`, a unique title and meta description, a self-referencing canonical URL, hreflang `en`/`el`/`x-default`, Open Graph and `og:locale`, Article JSON-LD (articles only), and the full article text already in the HTML, so crawlers and browsers without scripts see the content. The same app then loads over it, so design, header, footer, theme and navigation are unchanged.
+- `app.js`: the app now understands path URLs (`/journal/`, `/journal/<slug>/`, `/el/...`). The path decides the language. The language button on a path page goes to the other-language URL. Journal cards, related links and "Back to journal" now use the real URLs. Old links `/#journal/<id>` (including `test-strip`, `first-workshop`, `film-formats`) redirect to the new URL in the visitor's language. `/#journal` (the listing) and every other hash route still work. A skip-link handler keeps keyboard users on the page.
+- `AGENTS.md`: release rule added: run the generator after every release or Journal change, then `--check`.
+
+**Design decisions**
+- The static pages use `<base href>` so existing relative asset paths and `#route` links keep working; clicking a main-navigation link from an article page loads the app at `/#route`.
+- Generated files are committed to the repo (GitHub Pages serves them as-is); no build step is needed on the host.
+- The main "Journal" navigation link still points to the hash listing (`/#journal`). Because Google cannot follow it, the hub pages are discovered through the sitemap and the article-to-hub links. Optional later step: point the nav link to `journal/`.
+
+**Tested locally (Python static server standing in for GitHub Pages; headless Chrome)**
+- HTTP: all 18 pages return 200 with `text/html`; the same paths without a trailing slash return a redirect; `index.html` variants return 200; sitemap and robots return 200; unknown slugs return 404.
+- Sitemap: well-formed, 19 unique URLs, matches the generated pages, hreflang sets complete and self-consistent. Robots allows everything and lists the sitemap.
+- HTML as a crawler sees it (no JavaScript): correct `lang`, canonical, hreflang reciprocity, `og:url`/`og:locale`, JSON-LD, 18 unique titles, descriptions and canonicals, full article text present, images load.
+- With JavaScript: the URL language wins over a stored language preference, header and footer present, Journal highlighted in the nav, the rendered text equals the static text for all 18 pages, title and description identical to the static head, refresh keeps the page, images load, no console errors.
+- Behaviour: language switch goes to the counterpart URL for all 18 pages; navigation to other pages from an article; `/#journal` cards link to real URLs and open them; related links; back link to the hub; skip link; old hash links (EN and EL) redirect correctly; `/#journal` listing still works.
+
+**Still needs external verification (cannot be done from here)**
+- After publishing: confirm the live URLs return 200 (and `/journal/<slug>` redirects to the slash version) on GitHub Pages.
+- In Google Search Console: verify the property, submit `https://darkshelter-studio.github.io/sitemap.xml`, use URL Inspection on a few article URLs (live test, then "Request indexing"), and check the Pages report after a few days. Indexing is up to Google and can take days or weeks; a new, small preview site may not be indexed at all until it has links from elsewhere.
+- Google Rich Results Test on one article for the Article structured data.
+- Confirm Googlebot renders the pages as expected (URL Inspection → View crawled page) and that the preview-site wording is acceptable for public indexing.
 
 ## Publication status
 

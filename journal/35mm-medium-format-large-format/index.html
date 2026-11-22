@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <base href="../../">
+  <meta name="theme-color" content="#f1efe9">
+  <meta name="description" content="A beginner’s guide to 35mm, 120 medium format and large format film: how the cameras work, what each format offers and where to start.">
+  <meta property="og:title" content="35mm vs Medium Format vs Large Format Film · DARKSHELTER">
+  <meta property="og:description" content="A beginner’s guide to 35mm, 120 medium format and large format film: how the cameras work, what each format offers and where to start.">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="en_GB">
+  <meta property="og:image" content="https://darkshelter-studio.github.io/cameras.webp">
+  <meta property="og:url" content="https://darkshelter-studio.github.io/journal/35mm-medium-format-large-format/">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://darkshelter-studio.github.io/journal/35mm-medium-format-large-format/">
+  <link rel="alternate" hreflang="en" href="https://darkshelter-studio.github.io/journal/35mm-medium-format-large-format/">
+  <link rel="alternate" hreflang="el" href="https://darkshelter-studio.github.io/el/journal/35mm-medium-format-large-format/">
+  <link rel="alternate" hreflang="x-default" href="https://darkshelter-studio.github.io/journal/35mm-medium-format-large-format/">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;1,6..72,300&family=Hanken+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+  <link id="studio-styles" rel="stylesheet" href="styles.css?v=8f01769c5d4a">
+  <title>35mm vs Medium Format vs Large Format Film · DARKSHELTER</title>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Choose Your Film Format, Then Slow Down","description":"A beginner’s guide to 35mm, 120 medium format and large format film: how the cameras work, what each format offers and where to start.","inLanguage":"en","image":["https://darkshelter-studio.github.io/cameras.webp"],"mainEntityOfPage":{"@type":"WebPage","@id":"https://darkshelter-studio.github.io/journal/35mm-medium-format-large-format/"},"author":{"@type":"Organization","name":"DARKSHELTER"},"publisher":{"@type":"Organization","name":"DARKSHELTER"}}</script>
+  <script type="module">
+    // Resolve the latest asset versions on every page load. No background polling.
+    const fallback = {"version": "665b3c86560a", "assets": {"styles.css": "styles.css?v=8f01769c5d4a", "studio-config.js": "studio-config.js?v=ecc0309ee556", "app.js": "app.js?v=9579db4f704c"}};
+    const manifestUrl = new URL('version.json', document.baseURI);
+    manifestUrl.search = '';
+    manifestUrl.hash = '';
+    async function latest() {
+      const response = await fetch(manifestUrl, {cache: 'no-store'});
+      if (!response.ok) throw new Error('Version manifest unavailable');
+      const value = await response.json();
+      if (!value.version || !value.assets) throw new Error('Invalid version manifest');
+      for (const key of ['styles.css', 'studio-config.js', 'app.js']) {
+        const url = new URL(value.assets[key], manifestUrl);
+        if (url.origin !== location.origin || url.pathname !== new URL(key, manifestUrl).pathname) throw new Error('Invalid asset URL');
+      }
+      return value;
+    }
+    let current;
+    try { current = await latest(); } catch { current = fallback; }
+    document.getElementById('studio-styles').href = current.assets['styles.css'];
+    for (const name of ['studio-config.js', 'app.js']) {
+      await new Promise((resolve, reject) => {
+        const script = document.createElement('script');
+        script.src = current.assets[name];
+        script.onload = resolve;
+        script.onerror = reject;
+        document.head.appendChild(script);
+      });
+    }
+    let lastCheck = Date.now();
+    let checking = false;
+    async function checkForUpdate(force = false) {
+      if (document.hidden || checking || (!force && Date.now() - lastCheck < 15000)) return;
+      checking = true;
+      lastCheck = Date.now();
+      try {
+        const next = await latest();
+        if (next.version !== current.version) {
+          const url = new URL(location.href);
+          url.searchParams.set('v', next.version);
+          location.replace(url.href);
+        }
+      } catch {} finally { checking = false; }
+    }
+    addEventListener('focus', () => checkForUpdate());
+    addEventListener('visibilitychange', () => checkForUpdate());
+    addEventListener('pageshow', event => { if (event.persisted) checkForUpdate(true); });
+    addEventListener('online', () => checkForUpdate(true));
+  </script>
+</head>
+<body>
+  <a class="skip" href="#main-content">Skip to content</a>
+  <div id="preview-banner" class="preview-banner"></div>
+  <header id="header"></header>
+  <main id="main-content" tabindex="-1"><div class="page-head"><div class="article"><a class="text-link" href="journal/">Back to journal</a><p class="eyebrow space-top">FILM NOTES</p><h1>Choose Your Film Format, Then Slow Down</h1><p class="lead">35mm, medium format or large format: three different ways of making a photograph.</p></div></div><article class="article"><button type="button" class="photo " style="aspect-ratio:3/2;width:100%;padding:0;border:0" data-photo="cameras" aria-label="View photograph: A 35mm SLR, a twin-lens medium-format camera and a rangefinder on a wooden surface, with film canisters beside them."><img src="cameras.webp" srcset="cameras-small.webp 720w, cameras.webp 1536w" sizes="(max-width:760px) 140vw, 85vw" width="1536" height="1024" style="object-position:50% 50%;" alt="A 35mm SLR, a twin-lens medium-format camera and a rangefinder on a wooden surface, with film canisters beside them." loading="eager" decoding="async" fetchpriority="high"></button><div class="space-top"><p>Not all film cameras use the same size of film. Some use small rolls that let you take several photographs, while others use larger film or even individual sheets, making each photograph a more deliberate process.</p><p>35mm film is the most familiar starting point. It comes in small rolls, usually containing 24 or 36 exposures. The cameras are often compact, easy to carry and convenient for everyday photography.</p><p>120 film, also known as medium format, is wider than 35mm film and produces a much larger negative. Depending on the camera, photographs can be square or rectangular. Common frame sizes include 6×4.5, 6×6 and 6×7 cm. The larger negative offers more room for detail, while each roll produces fewer photographs.</p><p>Large format works differently again. Instead of a roll, the camera uses individual sheets of film, with each sheet making one photograph. The camera is usually mounted on a tripod, and the image is composed on a glass screen before the photograph is taken. The process takes more time, but gives you greater control over how the image is made.</p><p>Each format has its own character, advantages and way of working. There is no single right place to begin. The best way to understand the difference is to see the cameras, handle them and discover which process interests you.</p><p>You can explore different film formats and cameras in our photography workshops.</p><p>You can also look through <a class="text-link" href="#rental">the cameras we have at the studio</a>.</p></div><div class="space-top related"><p class="eyebrow">RELATED NOTES</p><p><a class="text-link" href="journal/choosing-your-first-roll-of-film/">Choosing Your First Roll of Film</a></p><p><a class="text-link" href="journal/what-happens-when-film-is-developed/">What Happens to Your Film After You Finish Shooting?</a></p></div><div class="space-top space-bottom"><div class="actions"><a class="btn outline" href="journal/">Back to journal</a></div></div></article></main>
+  <footer id="footer"></footer>
+  <dialog id="modal" aria-labelledby="modal-title"><button type="button" class="icon-btn modal-close" data-close aria-label="Close">×</button><div id="modal-content"></div></dialog>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

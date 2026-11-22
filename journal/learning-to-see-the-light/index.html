@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <base href="../../">
+  <meta name="theme-color" content="#f1efe9">
+  <meta name="description" content="A quiet introduction to light in photography: sun and shade, direction, and why noticing light matters before cameras and settings.">
+  <meta property="og:title" content="Understanding Light in Photography: Learning to See · DARKSHELTER">
+  <meta property="og:description" content="A quiet introduction to light in photography: sun and shade, direction, and why noticing light matters before cameras and settings.">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="en_GB">
+  <meta property="og:image" content="https://darkshelter-studio.github.io/village.webp">
+  <meta property="og:url" content="https://darkshelter-studio.github.io/journal/learning-to-see-the-light/">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://darkshelter-studio.github.io/journal/learning-to-see-the-light/">
+  <link rel="alternate" hreflang="en" href="https://darkshelter-studio.github.io/journal/learning-to-see-the-light/">
+  <link rel="alternate" hreflang="el" href="https://darkshelter-studio.github.io/el/journal/learning-to-see-the-light/">
+  <link rel="alternate" hreflang="x-default" href="https://darkshelter-studio.github.io/journal/learning-to-see-the-light/">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;1,6..72,300&family=Hanken+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+  <link id="studio-styles" rel="stylesheet" href="styles.css?v=8f01769c5d4a">
+  <title>Understanding Light in Photography: Learning to See · DARKSHELTER</title>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Learning to See the Light","description":"A quiet introduction to light in photography: sun and shade, direction, and why noticing light matters before cameras and settings.","inLanguage":"en","image":["https://darkshelter-studio.github.io/village.webp"],"mainEntityOfPage":{"@type":"WebPage","@id":"https://darkshelter-studio.github.io/journal/learning-to-see-the-light/"},"author":{"@type":"Organization","name":"DARKSHELTER"},"publisher":{"@type":"Organization","name":"DARKSHELTER"}}</script>
+  <script type="module">
+    // Resolve the latest asset versions on every page load. No background polling.
+    const fallback = {"version": "665b3c86560a", "assets": {"styles.css": "styles.css?v=8f01769c5d4a", "studio-config.js": "studio-config.js?v=ecc0309ee556", "app.js": "app.js?v=9579db4f704c"}};
+    const manifestUrl = new URL('version.json', document.baseURI);
+    manifestUrl.search = '';
+    manifestUrl.hash = '';
+    async function latest() {
+      const response = await fetch(manifestUrl, {cache: 'no-store'});
+      if (!response.ok) throw new Error('Version manifest unavailable');
+      const value = await response.json();
+      if (!value.version || !value.assets) throw new Error('Invalid version manifest');
+      for (const key of ['styles.css', 'studio-config.js', 'app.js']) {
+        const url = new URL(value.assets[key], manifestUrl);
+        if (url.origin !== location.origin || url.pathname !== new URL(key, manifestUrl).pathname) throw new Error('Invalid asset URL');
+      }
+      return value;
+    }
+    let current;
+    try { current = await latest(); } catch { current = fallback; }
+    document.getElementById('studio-styles').href = current.assets['styles.css'];
+    for (const name of ['studio-config.js', 'app.js']) {
+      await new Promise((resolve, reject) => {
+        const script = document.createElement('script');
+        script.src = current.assets[name];
+        script.onload = resolve;
+        script.onerror = reject;
+        document.head.appendChild(script);
+      });
+    }
+    let lastCheck = Date.now();
+    let checking = false;
+    async function checkForUpdate(force = false) {
+      if (document.hidden || checking || (!force && Date.now() - lastCheck < 15000)) return;
+      checking = true;
+      lastCheck = Date.now();
+      try {
+        const next = await latest();
+        if (next.version !== current.version) {
+          const url = new URL(location.href);
+          url.searchParams.set('v', next.version);
+          location.replace(url.href);
+        }
+      } catch {} finally { checking = false; }
+    }
+    addEventListener('focus', () => checkForUpdate());
+    addEventListener('visibilitychange', () => checkForUpdate());
+    addEventListener('pageshow', event => { if (event.persisted) checkForUpdate(true); });
+    addEventListener('online', () => checkForUpdate(true));
+  </script>
+</head>
+<body>
+  <a class="skip" href="#main-content">Skip to content</a>
+  <div id="preview-banner" class="preview-banner"></div>
+  <header id="header"></header>
+  <main id="main-content" tabindex="-1"><div class="page-head"><div class="article"><a class="text-link" href="journal/">Back to journal</a><p class="eyebrow space-top">PHOTOGRAPHY NOTES</p><h1>Learning to See the Light</h1><p class="lead">Before thinking about cameras and settings, start by noticing the light around you.</p></div></div><article class="article"><button type="button" class="photo " style="aspect-ratio:3/2;width:100%;padding:0;border:0" data-photo="village" aria-label="View photograph: Soft daylight and shadow on a stone building with wooden shutters and an open door."><img src="village.webp" srcset="village-small.webp 720w, village.webp 1536w" sizes="(max-width:760px) 140vw, 85vw" width="1536" height="1024" style="object-position:50% 50%;" alt="Soft daylight and shadow on a stone building with wooden shutters and an open door." loading="eager" decoding="async" fetchpriority="high"></button><div class="space-top"><p>A photograph begins with light. It might come through a window, fall across a building or disappear behind a passing cloud. Learning to notice these small changes is one of the simplest ways to become more comfortable with photography.</p><p>Think about the difference between photographing a subject in direct sunlight and photographing it on an overcast day. In strong sunlight, shadows are often sharp and clearly defined. On a cloudy day, the light becomes softer, spreading more evenly across the scene.</p><p>The direction of the light matters too. Light coming from the side can reveal the texture of a wall or the details in someone’s face. Light coming from behind a subject can create silhouettes and interesting outlines.</p><p>With film photography, these observations become especially important. Film needs light to record an image, and the amount available influences how you expose your photograph.</p><p>Try returning to the same place at different times of day. Notice how the shadows move, how colours change and how the same scene can feel completely different.</p><p>You don’t need a camera to begin learning about light. Sometimes it’s enough to stop and look.</p></div><div class="space-top related"><p class="eyebrow">RELATED NOTES</p><p><a class="text-link" href="journal/choosing-your-first-roll-of-film/">Choosing Your First Roll of Film</a></p><p><a class="text-link" href="journal/35mm-medium-format-large-format/">Choose Your Film Format, Then Slow Down</a></p></div><div class="space-top space-bottom"><div class="actions"><a class="btn outline" href="journal/">Back to journal</a></div></div></article></main>
+  <footer id="footer"></footer>
+  <dialog id="modal" aria-labelledby="modal-title"><button type="button" class="icon-btn modal-close" data-close aria-label="Close">×</button><div id="modal-content"></div></dialog>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

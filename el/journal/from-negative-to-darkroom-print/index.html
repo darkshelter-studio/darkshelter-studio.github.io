@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="el">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <base href="../../../">
+  <meta name="theme-color" content="#f1efe9">
+  <meta name="description" content="Πώς ένα εμφανισμένο αρνητικό γίνεται φωτογραφική εκτύπωση: ο μεγεθυντής, το φωτοευαίσθητο χαρτί, ο εμφανιστής και οι αποφάσεις που διαμορφώνουν την εικόνα.">
+  <meta property="og:title" content="Πώς φτιάχνεται μια εκτύπωση στον σκοτεινό θάλαμο · DARKSHELTER">
+  <meta property="og:description" content="Πώς ένα εμφανισμένο αρνητικό γίνεται φωτογραφική εκτύπωση: ο μεγεθυντής, το φωτοευαίσθητο χαρτί, ο εμφανιστής και οι αποφάσεις που διαμορφώνουν την εικόνα.">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="el_GR">
+  <meta property="og:image" content="https://darkshelter-studio.github.io/darkroom.webp">
+  <meta property="og:url" content="https://darkshelter-studio.github.io/el/journal/from-negative-to-darkroom-print/">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://darkshelter-studio.github.io/el/journal/from-negative-to-darkroom-print/">
+  <link rel="alternate" hreflang="en" href="https://darkshelter-studio.github.io/journal/from-negative-to-darkroom-print/">
+  <link rel="alternate" hreflang="el" href="https://darkshelter-studio.github.io/el/journal/from-negative-to-darkroom-print/">
+  <link rel="alternate" hreflang="x-default" href="https://darkshelter-studio.github.io/journal/from-negative-to-darkroom-print/">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;1,6..72,300&family=Hanken+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+  <link id="studio-styles" rel="stylesheet" href="styles.css?v=8f01769c5d4a">
+  <title>Πώς φτιάχνεται μια εκτύπωση στον σκοτεινό θάλαμο · DARKSHELTER</title>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Από το αρνητικό στη φωτογραφία","description":"Πώς ένα εμφανισμένο αρνητικό γίνεται φωτογραφική εκτύπωση: ο μεγεθυντής, το φωτοευαίσθητο χαρτί, ο εμφανιστής και οι αποφάσεις που διαμορφώνουν την εικόνα.","inLanguage":"el","image":["https://darkshelter-studio.github.io/darkroom.webp"],"mainEntityOfPage":{"@type":"WebPage","@id":"https://darkshelter-studio.github.io/el/journal/from-negative-to-darkroom-print/"},"author":{"@type":"Organization","name":"DARKSHELTER"},"publisher":{"@type":"Organization","name":"DARKSHELTER"}}</script>
+  <script type="module">
+    // Resolve the latest asset versions on every page load. No background polling.
+    const fallback = {"version": "665b3c86560a", "assets": {"styles.css": "styles.css?v=8f01769c5d4a", "studio-config.js": "studio-config.js?v=ecc0309ee556", "app.js": "app.js?v=9579db4f704c"}};
+    const manifestUrl = new URL('version.json', document.baseURI);
+    manifestUrl.search = '';
+    manifestUrl.hash = '';
+    async function latest() {
+      const response = await fetch(manifestUrl, {cache: 'no-store'});
+      if (!response.ok) throw new Error('Version manifest unavailable');
+      const value = await response.json();
+      if (!value.version || !value.assets) throw new Error('Invalid version manifest');
+      for (const key of ['styles.css', 'studio-config.js', 'app.js']) {
+        const url = new URL(value.assets[key], manifestUrl);
+        if (url.origin !== location.origin || url.pathname !== new URL(key, manifestUrl).pathname) throw new Error('Invalid asset URL');
+      }
+      return value;
+    }
+    let current;
+    try { current = await latest(); } catch { current = fallback; }
+    document.getElementById('studio-styles').href = current.assets['styles.css'];
+    for (const name of ['studio-config.js', 'app.js']) {
+      await new Promise((resolve, reject) => {
+        const script = document.createElement('script');
+        script.src = current.assets[name];
+        script.onload = resolve;
+        script.onerror = reject;
+        document.head.appendChild(script);
+      });
+    }
+    let lastCheck = Date.now();
+    let checking = false;
+    async function checkForUpdate(force = false) {
+      if (document.hidden || checking || (!force && Date.now() - lastCheck < 15000)) return;
+      checking = true;
+      lastCheck = Date.now();
+      try {
+        const next = await latest();
+        if (next.version !== current.version) {
+          const url = new URL(location.href);
+          url.searchParams.set('v', next.version);
+          location.replace(url.href);
+        }
+      } catch {} finally { checking = false; }
+    }
+    addEventListener('focus', () => checkForUpdate());
+    addEventListener('visibilitychange', () => checkForUpdate());
+    addEventListener('pageshow', event => { if (event.persisted) checkForUpdate(true); });
+    addEventListener('online', () => checkForUpdate(true));
+  </script>
+</head>
+<body>
+  <a class="skip" href="#main-content">Skip to content</a>
+  <div id="preview-banner" class="preview-banner"></div>
+  <header id="header"></header>
+  <main id="main-content" tabindex="-1"><div class="page-head"><div class="article"><a class="text-link" href="el/journal/">Πίσω στις σημειώσεις</a><p class="eyebrow space-top">ΣΚΟΤΕΙΝΟΣ ΘΑΛΑΜΟΣ</p><h1>Από το αρνητικό στη φωτογραφία</h1><p class="lead">Πώς μια εικόνα πάνω σε ένα μικρό κομμάτι φιλμ γίνεται κάτι που μπορείς να κρατήσεις στα χέρια σου.</p></div></div><article class="article"><button type="button" class="photo " style="aspect-ratio:3/2;width:100%;padding:0;border:0" data-photo="darkroom" aria-label="Προβολή φωτογραφίας: Ένας φωτογραφικός μεγεθυντής και η βάση του σε σκοτεινό θάλαμο με κόκκινο φως."><img src="darkroom.webp" srcset="darkroom-small.webp 720w, darkroom.webp 1536w" sizes="(max-width:760px) 140vw, 85vw" width="1536" height="1024" style="object-position:92% 35%;transform:scale(1.9);transform-origin:92% 35%" alt="Ένας φωτογραφικός μεγεθυντής και η βάση του σε σκοτεινό θάλαμο με κόκκινο φως." loading="eager" decoding="async" fetchpriority="high"></button><div class="space-top"><p>Ένα εμφανισμένο αρνητικό δεν είναι ακριβώς η φωτογραφία που θυμάσαι ότι τράβηξες. Είναι ένα μικρό κομμάτι φιλμ όπου τα φωτεινά και τα σκοτεινά σημεία της αρχικής σκηνής εμφανίζονται αντεστραμμένα. Για να το μετατρέψουμε σε εκτύπωση, πρέπει να το φέρουμε στον σκοτεινό θάλαμο.</p><p>Το αρνητικό τοποθετείται μέσα σε έναν φωτογραφικό μεγεθυντή, ένα μηχάνημα που προβάλλει φως μέσα από το φιλμ πάνω σε φωτοευαίσθητο φωτογραφικό χαρτί. Ένας φακός εστιάζει την εικόνα και μας επιτρέπει να την κάνουμε μεγαλύτερη από το αρχικό αρνητικό.</p><p>Στην αρχή το χαρτί φαίνεται εντελώς λευκό. Μετά την έκθεση, το βάζουμε σε μια λεκάνη με εμφανιστή. Σιγά σιγά αρχίζει να εμφανίζεται μια εικόνα. Φωτεινές περιοχές, σκούρες σκιές και γνώριμες λεπτομέρειες παίρνουν μορφή.</p><p>Όταν η εκτύπωση έχει εμφανιστεί, στερεωθεί και πλυθεί, η φωτογραφία μπορεί να βγει από τον σκοτεινό θάλαμο.</p><p>Το ενδιαφέρον σε αυτή τη διαδικασία είναι ότι το αρνητικό δεν καθορίζει ακριβώς πώς θα είναι η τελική εκτύπωση. Μπορείς να αποφασίσεις για την έκθεση, το κοντράστ και τον τρόπο που παρουσιάζεται η εικόνα.</p><p>Ένα αρνητικό μπορεί να δώσει πολλές εκτυπώσεις, κάθε μία λίγο διαφορετική.</p><p>Η φωτογραφία δεν αντιγράφεται απλώς από το φιλμ. Φτιάχνεται, μία απόφαση τη φορά.</p><p>Μπορείς να μάθεις αυτή τη διαδικασία στην πράξη στο <a class="text-link" href="#darkroom">workshop μας στον σκοτεινό θάλαμο</a>.</p></div><div class="space-top related"><p class="eyebrow">ΣΧΕΤΙΚΕΣ ΣΗΜΕΙΩΣΕΙΣ</p><p><a class="text-link" href="el/journal/what-is-a-test-strip/">Τι είναι η δοκιμαστική λωρίδα και γιατί τη φτιάχνουμε;</a></p><p><a class="text-link" href="el/journal/what-happens-when-film-is-developed/">Τι γίνεται με το φιλμ μετά το τελευταίο καρέ;</a></p></div><div class="space-top space-bottom"><div class="actions"><a class="btn outline" href="el/journal/">Πίσω στις σημειώσεις</a></div></div></article></main>
+  <footer id="footer"></footer>
+  <dialog id="modal" aria-labelledby="modal-title"><button type="button" class="icon-btn modal-close" data-close aria-label="Close">×</button><div id="modal-content"></div></dialog>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
