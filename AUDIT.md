@@ -115,7 +115,7 @@ Status: implemented and tested locally; **not published or deployed**.
 **Design decisions**
 - The static pages use `<base href>` so existing relative asset paths and `#route` links keep working; clicking a main-navigation link from an article page loads the app at `/#route`.
 - Generated files are committed to the repo (GitHub Pages serves them as-is); no build step is needed on the host.
-- The main "Journal" navigation link still points to the hash listing (`/#journal`). Because Google cannot follow it, the hub pages are discovered through the sitemap and the article-to-hub links. Optional later step: point the nav link to `journal/`.
+- The main "Journal" navigation tab now links to the hub page (`journal/` in English, `el/journal/` in Greek); see "Final navigation change" below.
 
 **Tested locally (Python static server standing in for GitHub Pages; headless Chrome)**
 - HTTP: all 18 pages return 200 with `text/html`; the same paths without a trailing slash return a redirect; `index.html` variants return 200; sitemap and robots return 200; unknown slugs return 404.
@@ -123,6 +123,15 @@ Status: implemented and tested locally; **not published or deployed**.
 - HTML as a crawler sees it (no JavaScript): correct `lang`, canonical, hreflang reciprocity, `og:url`/`og:locale`, JSON-LD, 18 unique titles, descriptions and canonicals, full article text present, images load.
 - With JavaScript: the URL language wins over a stored language preference, header and footer present, Journal highlighted in the nav, the rendered text equals the static text for all 18 pages, title and description identical to the static head, refresh keeps the page, images load, no console errors.
 - Behaviour: language switch goes to the counterpart URL for all 18 pages; navigation to other pages from an article; `/#journal` cards link to real URLs and open them; related links; back link to the hub; skip link; old hash links (EN and EL) redirect correctly; `/#journal` listing still works.
+
+**Final navigation change (Journal tab → real URL)**
+- `app.js`: the Journal item in the main navigation (desktop bar and mobile menu) now links to `journal/` or `el/journal/` (following the current language) instead of `#journal`. All other tabs and the "Book a workshop" button are unchanged hash routes. Each nav link carries a `data-route` attribute and the active-page highlight now matches on that, so the Journal tab stays highlighted on the hub, on every article and on the legacy `/#journal` listing.
+- Because the Journal tab is now a real link, every page of the site links to the crawlable hub, and the hub links to all eight articles, so the Journal pages are reachable by crawling as well as through the sitemap.
+- Behaviour: clicking the Journal tab loads the hub page (a full page load, like any real link); the other tabs still switch inside the app without reloading. Changing language on the hub or an article goes to the counterpart URL; changing language elsewhere updates the Journal tab's link to the other language.
+- Unchanged: design, layout, animations, header, mobile menu behaviour, the `/#journal` listing (still works), old article hash links (still redirect).
+- Release process: `version.json` and `index.html` hashes updated (version `62d42b518cd1`), static pages and sitemap regenerated. `node tools/generate-journal.mjs --check` reported the pages stale right after the hash change and up to date after regeneration (20 files: 18 pages, `sitemap.xml`, `robots.txt`; the sitemap content itself did not change).
+- Tests run after this change (headless Chrome, local server): SEO/HTTP/static/browser suite 469 checks passed; Journal suite 598 passed; new Journal-navigation suite 110 passed (EN/EL, desktop and mobile: nav hrefs and order, Journal tab → hub, highlight on hub/article/legacy listing, other tabs stay in-app without reload, language switching at root, hub and article updates the tab link and highlight, no `#journal` hrefs left on Journal pages, all Journal links use the real URLs, no console errors); navigation and Analogue Shelf suites passed (the only flagged items were blocked Google Fonts requests in the sandbox, now ignored by the test). Several test-script timing issues were fixed along the way; none were site bugs.
+- Not verified: real phones; the live site (nothing deployed).
 
 **Still needs external verification (cannot be done from here)**
 - After publishing: confirm the live URLs return 200 (and `/journal/<slug>` redirects to the slash version) on GitHub Pages.
