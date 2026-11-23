@@ -39,3 +39,5 @@ td{overflow-wrap:anywhere}
 @media(max-width:760px){.journal-card h3{font-size:26px;max-width:none}.journal-card .journal-item{padding:20px 0 32px}.journal-card .j-meta{margin-bottom:20px}}
 @media(prefers-reduced-motion:reduce){.journal-card .journal-item{transition:none}.journal-card .journal-item:hover{transform:none}}
 .page-head .eyebrow .j-no{font-size:inherit;letter-spacing:inherit}
+
+.about-offer{padding:22px 0;border-top:1px solid var(--line)}.about-offer:last-child{border-bottom:1px solid var(--line)}.about-offer h3{margin:0}.about-offer p{margin:8px 0 16px;max-width:46ch}.about-offers h2{margin-bottom:24px}
